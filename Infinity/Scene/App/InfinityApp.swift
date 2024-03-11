@@ -1,9 +1,4 @@
-//
-//  InfinityApp.swift
-//  Infinity
-//
 //  Created by Alexander Skorulis on 11/3/2024.
-//
 
 import SwiftUI
 
