@@ -17,9 +17,17 @@ extension MapView: View {
     var body: some View {
         ZStack {
             background
-            Text("\(viewModel.totalOffset.width)")
+            content
+                .allowsHitTesting(false)
+            MapChunkView(chunk: .init())
+                .allowsHitTesting(false)
                 .offset(viewModel.totalOffset)
         }
+    }
+    
+    private var content: some View {
+        MapChunkCanvas()
+            .frame(width: 200, height: 200)
     }
     
     private var background: some View {

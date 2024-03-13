@@ -7,22 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA8A7F152B9EF2D700894B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F142B9EF2D700894B8C /* Assets.xcassets */; };
-		FA8A7F182B9EF2D700894B8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F172B9EF2D700894B8C /* Preview Assets.xcassets */; };
 		FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */; };
 		FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F212B9EFA6200894B8C /* ContentView.swift */; };
 		FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F252B9EFA6D00894B8C /* MapView.swift */; };
 		FA8A7F282B9EFB5000894B8C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */; };
+		FA8A7F2E2B9F0C8800894B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */; };
+		FA8A7F2F2B9F0C8800894B8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F2D2B9F0C8800894B8C /* Preview Assets.xcassets */; };
+		FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F312B9F0E2F00894B8C /* MapModel.swift */; };
+		FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F332B9F0E4500894B8C /* MapSquare.swift */; };
+		FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */; };
+		FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F392BA18B6400894B8C /* MapConstants.swift */; };
+		FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */; };
+		FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3D2BA1904400894B8C /* MapChunk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA8A7F0D2B9EF2D600894B8C /* Infinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA8A7F142B9EF2D700894B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA8A7F172B9EF2D700894B8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfinityApp.swift; sourceTree = "<group>"; };
 		FA8A7F212B9EFA6200894B8C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA8A7F252B9EFA6D00894B8C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8A7F2D2B9F0C8800894B8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA8A7F312B9F0E2F00894B8C /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		FA8A7F332B9F0E4500894B8C /* MapSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSquare.swift; sourceTree = "<group>"; };
+		FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunkCanvas.swift; sourceTree = "<group>"; };
+		FA8A7F392BA18B6400894B8C /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
+		FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunkView.swift; sourceTree = "<group>"; };
+		FA8A7F3D2BA1904400894B8C /* MapChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,19 +67,11 @@
 		FA8A7F0F2B9EF2D600894B8C /* Infinity */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F2A2B9F0C8800894B8C /* Resource */,
+				FA8A7F292B9F0C6A00894B8C /* Model */,
 				FA8A7F1E2B9EFA6200894B8C /* Scene */,
-				FA8A7F142B9EF2D700894B8C /* Assets.xcassets */,
-				FA8A7F162B9EF2D700894B8C /* Preview Content */,
 			);
 			path = Infinity;
-			sourceTree = "<group>";
-		};
-		FA8A7F162B9EF2D700894B8C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F172B9EF2D700894B8C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		FA8A7F1E2B9EFA6200894B8C /* Scene */ = {
@@ -93,6 +97,44 @@
 			children = (
 				FA8A7F252B9EFA6D00894B8C /* MapView.swift */,
 				FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */,
+				FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */,
+				FA8A7F392BA18B6400894B8C /* MapConstants.swift */,
+				FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		FA8A7F292B9F0C6A00894B8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F302B9F0CD600894B8C /* Map */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA8A7F2A2B9F0C8800894B8C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */,
+				FA8A7F2C2B9F0C8800894B8C /* Preview Content */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FA8A7F2C2B9F0C8800894B8C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F2D2B9F0C8800894B8C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA8A7F302B9F0CD600894B8C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F312B9F0E2F00894B8C /* MapModel.swift */,
+				FA8A7F332B9F0E4500894B8C /* MapSquare.swift */,
+				FA8A7F3D2BA1904400894B8C /* MapChunk.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -155,8 +197,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8A7F182B9EF2D700894B8C /* Preview Assets.xcassets in Resources */,
-				FA8A7F152B9EF2D700894B8C /* Assets.xcassets in Resources */,
+				FA8A7F2F2B9F0C8800894B8C /* Preview Assets.xcassets in Resources */,
+				FA8A7F2E2B9F0C8800894B8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */,
+				FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */,
 				FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */,
+				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
+				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
+				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
+				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
 				FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */,
 				FA8A7F282B9EFB5000894B8C /* MapViewModel.swift in Sources */,
@@ -303,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Infinity/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Infinity/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -332,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Infinity/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Infinity/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

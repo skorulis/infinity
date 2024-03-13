@@ -7,6 +7,8 @@ final class MapViewModel: ObservableObject {
     @Published var dragStart: CGSize = .zero
     @Published var drag: CGSize = .zero
     
+    @Published var map: MapModel = .init()
+    
     var totalOffset: CGSize {
         return CGSize(
             width: drag.width + dragStart.width,
