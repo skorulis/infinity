@@ -19,6 +19,8 @@
 		FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F392BA18B6400894B8C /* MapConstants.swift */; };
 		FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */; };
 		FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3D2BA1904400894B8C /* MapChunk.swift */; };
+		FA8A7F412BA1AD5000894B8C /* properhitboxglobal.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */; };
+		FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FA8A7F392BA18B6400894B8C /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunkView.swift; sourceTree = "<group>"; };
 		FA8A7F3D2BA1904400894B8C /* MapChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunk.swift; sourceTree = "<group>"; };
+		FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = properhitboxglobal.otf; sourceTree = "<group>"; };
+		FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Font.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		FA8A7F0F2B9EF2D600894B8C /* Infinity */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F422BA1AE5700894B8C /* Util */,
 				FA8A7F2A2B9F0C8800894B8C /* Resource */,
 				FA8A7F292B9F0C6A00894B8C /* Model */,
 				FA8A7F1E2B9EFA6200894B8C /* Scene */,
@@ -115,6 +120,7 @@
 		FA8A7F2A2B9F0C8800894B8C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F3F2BA1AD5000894B8C /* Font */,
 				FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */,
 				FA8A7F2C2B9F0C8800894B8C /* Preview Content */,
 			);
@@ -137,6 +143,22 @@
 				FA8A7F3D2BA1904400894B8C /* MapChunk.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		FA8A7F3F2BA1AD5000894B8C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		FA8A7F422BA1AE5700894B8C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +221,7 @@
 			files = (
 				FA8A7F2F2B9F0C8800894B8C /* Preview Assets.xcassets in Resources */,
 				FA8A7F2E2B9F0C8800894B8C /* Assets.xcassets in Resources */,
+				FA8A7F412BA1AD5000894B8C /* properhitboxglobal.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +237,7 @@
 				FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */,
 				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
 				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
+				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
 				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
 				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
