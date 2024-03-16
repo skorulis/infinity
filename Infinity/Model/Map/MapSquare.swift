@@ -5,7 +5,7 @@ import Foundation
 struct MapSquare {
     
     var character: String {
-        return "."
+        return "░"
     }
     
 }

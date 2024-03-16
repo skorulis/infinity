@@ -45,6 +45,6 @@ struct MapChunkView: View {
 }
 
 #Preview {
-    MapChunkView(chunk: .init())
+    MapChunkView(chunk: .init(topCorner: .zero))
         .border(Color.black)
 }

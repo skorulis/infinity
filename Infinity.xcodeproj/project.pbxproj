@@ -21,6 +21,7 @@
 		FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3D2BA1904400894B8C /* MapChunk.swift */; };
 		FA8A7F412BA1AD5000894B8C /* properhitboxglobal.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */; };
 		FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */; };
+		FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F462BA522FE00894B8C /* Coord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FA8A7F3D2BA1904400894B8C /* MapChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunk.swift; sourceTree = "<group>"; };
 		FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = properhitboxglobal.otf; sourceTree = "<group>"; };
 		FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Font.swift"; sourceTree = "<group>"; };
+		FA8A7F462BA522FE00894B8C /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		FA8A7F292B9F0C6A00894B8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F452BA522F500894B8C /* Util */,
 				FA8A7F302B9F0CD600894B8C /* Map */,
 			);
 			path = Model;
@@ -157,6 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FA8A7F452BA522F500894B8C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F462BA522FE00894B8C /* Coord.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
 				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
+				FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */,
 				FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */,
 				FA8A7F282B9EFB5000894B8C /* MapViewModel.swift in Sources */,
 			);

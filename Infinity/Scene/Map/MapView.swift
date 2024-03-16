@@ -19,9 +19,12 @@ extension MapView: View {
             background
             content
                 .allowsHitTesting(false)
-            MapChunkView(chunk: .init())
+            MapChunkView(chunk: .init(topCorner: .zero))
                 .allowsHitTesting(false)
                 .offset(viewModel.totalOffset)
+        }
+        .onTapGesture { location in
+            print(location)
         }
     }
     
