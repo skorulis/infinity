@@ -7,7 +7,7 @@ import SwiftUI
 struct VisibleChunksView {
     
     let map: MapModel
-    let offset: CGPoint
+    let offset: CGSize
 }
 
 // MARK: - Rendering
@@ -16,12 +16,24 @@ extension VisibleChunksView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            VStack {
-                Text("\(proxy.size.width)")
-                Text("\(proxy.size.height)")
+            ZStack(alignment: .topLeading) {
+                ForEach(Array(0..<map.yChunks), id: \.self) { y in
+                    ForEach(Array(0..<map.xChunks), id: \.self) { x in
+                        chunk(x: x, y: y)
+                    }
+                }
             }
         }
+        .offset(offset)
         .border(Color.black)
+    }
+    
+    private func chunk(x: Int, y: Int) -> some View {
+        let coord = Coord(x: x, y: y)
+        let chunk = map.chunk(at: coord)
+        return MapChunkView(chunk: chunk)
+            .border(Color.gray)
+            .offset(MapMath.chunkOffset(coord: coord))
     }
 }
 
@@ -29,7 +41,7 @@ extension VisibleChunksView: View {
 
 #Preview {
     let map = MapModel(xChunks: 4, yChunks: 4)
-    let offset = CGPoint.zero
+    let offset = CGSize.zero
     return VisibleChunksView(
         map: map,
         offset: offset

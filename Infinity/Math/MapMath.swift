@@ -9,4 +9,11 @@ enum MapMath {
         let y = Int(screen.y / MapConstants.tileSize)
         return Coord(x: x, y: y)
     }
+    
+    static func chunkOffset(coord: Coord) -> CGSize {
+        return CGSize(
+            width: CGFloat(coord.x * MapConstants.chunkSize) * MapConstants.tileSize,
+            height: CGFloat(coord.y * MapConstants.chunkSize) * MapConstants.tileSize
+        )
+    }
 }
