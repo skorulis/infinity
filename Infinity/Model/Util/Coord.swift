@@ -2,9 +2,13 @@
 
 import Foundation
 
-struct Coord {
+struct Coord: Hashable, Equatable, CustomDebugStringConvertible {
     let x: Int
     let y: Int
     
     static var zero: Coord = .init(x: 0, y: 0)
+    
+    var debugDescription: String {
+        "(\(x), \(y))"
+    }
 }

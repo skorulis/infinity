@@ -7,12 +7,18 @@ final class MapViewModel: ObservableObject {
     @Published var dragStart: CGSize = .zero
     @Published var drag: CGSize = .zero
     
-    @Published var map: MapModel = .init()
+    @Published var map: MapModel = .init(xChunks: 4, yChunks: 4)
     
     var totalOffset: CGSize {
         return CGSize(
             width: drag.width + dragStart.width,
             height: drag.height + dragStart.height
         )
+    }
+    
+    func onTap(location: CGPoint) {
+        let offSetLocation = CGPoint(x: location.x - totalOffset.width, y: location.y - totalOffset.height)
+        let coord = MapMath.toMapCoord(screen: offSetLocation)
+        print("Coord = \(coord)")
     }
 }

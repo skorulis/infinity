@@ -22,7 +22,20 @@
 		FA8A7F412BA1AD5000894B8C /* properhitboxglobal.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */; };
 		FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */; };
 		FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F462BA522FE00894B8C /* Coord.swift */; };
+		FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */; };
+		FA8A7F4C2BA5338B00894B8C /* MapMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F4B2BA5338B00894B8C /* MapMath.swift */; };
+		FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA8A7F552BA5445A00894B8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA8A7F052B9EF2D600894B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA8A7F0C2B9EF2D600894B8C;
+			remoteInfo = Infinity;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FA8A7F0D2B9EF2D600894B8C /* Infinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +54,21 @@
 		FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = properhitboxglobal.otf; sourceTree = "<group>"; };
 		FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Font.swift"; sourceTree = "<group>"; };
 		FA8A7F462BA522FE00894B8C /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
+		FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleChunksView.swift; sourceTree = "<group>"; };
+		FA8A7F4B2BA5338B00894B8C /* MapMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMath.swift; sourceTree = "<group>"; };
+		FA8A7F512BA5445A00894B8C /* InfinityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMathTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA8A7F0A2B9EF2D600894B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8A7F4E2BA5445A00894B8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8A7F0F2B9EF2D600894B8C /* Infinity */,
+				FA8A7F522BA5445A00894B8C /* InfinityTests */,
 				FA8A7F0E2B9EF2D600894B8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8A7F0D2B9EF2D600894B8C /* Infinity.app */,
+				FA8A7F512BA5445A00894B8C /* InfinityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +99,7 @@
 		FA8A7F0F2B9EF2D600894B8C /* Infinity */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F4A2BA5337E00894B8C /* Math */,
 				FA8A7F422BA1AE5700894B8C /* Util */,
 				FA8A7F2A2B9F0C8800894B8C /* Resource */,
 				FA8A7F292B9F0C6A00894B8C /* Model */,
@@ -107,6 +134,7 @@
 				FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */,
 				FA8A7F392BA18B6400894B8C /* MapConstants.swift */,
 				FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */,
+				FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -172,6 +200,30 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		FA8A7F4A2BA5337E00894B8C /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F4B2BA5338B00894B8C /* MapMath.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		FA8A7F522BA5445A00894B8C /* InfinityTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F5A2BA5446900894B8C /* Math */,
+			);
+			path = InfinityTests;
+			sourceTree = "<group>";
+		};
+		FA8A7F5A2BA5446900894B8C /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,6 +244,24 @@
 			productReference = FA8A7F0D2B9EF2D600894B8C /* Infinity.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA8A7F502BA5445A00894B8C /* InfinityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8A7F572BA5445A00894B8C /* Build configuration list for PBXNativeTarget "InfinityTests" */;
+			buildPhases = (
+				FA8A7F4D2BA5445A00894B8C /* Sources */,
+				FA8A7F4E2BA5445A00894B8C /* Frameworks */,
+				FA8A7F4F2BA5445A00894B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA8A7F562BA5445A00894B8C /* PBXTargetDependency */,
+			);
+			name = InfinityTests;
+			productName = InfinityTests;
+			productReference = FA8A7F512BA5445A00894B8C /* InfinityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +274,11 @@
 				TargetAttributes = {
 					FA8A7F0C2B9EF2D600894B8C = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					FA8A7F502BA5445A00894B8C = {
+						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
+						TestTargetID = FA8A7F0C2B9EF2D600894B8C;
 					};
 				};
 			};
@@ -221,6 +296,7 @@
 			projectRoot = "";
 			targets = (
 				FA8A7F0C2B9EF2D600894B8C /* Infinity */,
+				FA8A7F502BA5445A00894B8C /* InfinityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +312,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA8A7F4F2BA5445A00894B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -248,8 +331,10 @@
 				FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */,
 				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
 				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
+				FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */,
 				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
 				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
+				FA8A7F4C2BA5338B00894B8C /* MapMath.swift in Sources */,
 				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
 				FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */,
@@ -258,7 +343,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA8A7F4D2BA5445A00894B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA8A7F562BA5445A00894B8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA8A7F0C2B9EF2D600894B8C /* Infinity */;
+			targetProxy = FA8A7F552BA5445A00894B8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FA8A7F192B9EF2D700894B8C /* Debug */ = {
@@ -438,6 +539,45 @@
 			};
 			name = Release;
 		};
+		FA8A7F582BA5445A00894B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.InfinityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Infinity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Infinity";
+			};
+			name = Debug;
+		};
+		FA8A7F592BA5445A00894B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.InfinityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Infinity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Infinity";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +595,15 @@
 			buildConfigurations = (
 				FA8A7F1C2B9EF2D700894B8C /* Debug */,
 				FA8A7F1D2B9EF2D700894B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8A7F572BA5445A00894B8C /* Build configuration list for PBXNativeTarget "InfinityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8A7F582BA5445A00894B8C /* Debug */,
+				FA8A7F592BA5445A00894B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

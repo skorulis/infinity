@@ -15,7 +15,7 @@ struct MapView {
 extension MapView: View {
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topLeading) {
             background
             content
                 .allowsHitTesting(false)
@@ -23,9 +23,7 @@ extension MapView: View {
                 .allowsHitTesting(false)
                 .offset(viewModel.totalOffset)
         }
-        .onTapGesture { location in
-            print(location)
-        }
+        .onTapGesture { viewModel.onTap(location: $0) }
     }
     
     private var content: some View {
