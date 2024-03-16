@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "askcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/skorulis/ASKCore",
+      "state" : {
+        "branch" : "main",
+        "revision" : "73b74b68bf7bf208bffcfba9f5ec81b3c2a33327"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "revision" : "463cb2d659c8ae34899d18057ea5b1bb86fc3178",
+        "version" : "2.8.4"
+      }
+    },
+    {
+      "identity" : "swinjectautoregistration",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/SwinjectAutoregistration.git",
+      "state" : {
+        "revision" : "2f37415084584d0aa97007e43eb7a2498ccf770e",
+        "version" : "2.8.3"
+      }
+    }
+  ],
+  "version" : 2
+}

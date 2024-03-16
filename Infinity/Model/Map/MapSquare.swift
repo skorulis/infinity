@@ -4,8 +4,12 @@ import Foundation
 
 struct MapSquare {
     
+    var items: [String] = []
+    
+    var player: Player?
+    
     var character: String {
-        return "░"
+        return player?.character ?? "░"
     }
     
 }

@@ -7,7 +7,7 @@ import SwiftUI
 
 struct MapView {
     
-    @StateObject var viewModel: MapViewModel = MapViewModel()
+    @StateObject var viewModel: MapViewModel
 }
 
 // MARK: - Rendering
@@ -17,8 +17,6 @@ extension MapView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             background
-            content
-                .allowsHitTesting(false)
             VisibleChunksView(
                 map: viewModel.map,
                 offset: viewModel.totalOffset
@@ -26,11 +24,6 @@ extension MapView: View {
             .allowsHitTesting(false)
         }
         .onTapGesture { viewModel.onTap(location: $0) }
-    }
-    
-    private var content: some View {
-        MapChunkCanvas()
-            .frame(width: 200, height: 200)
     }
     
     private var background: some View {
@@ -54,6 +47,7 @@ extension MapView: View {
 // MARK: - Previews
 
 #Preview {
-    MapView()
+    let ioc = IOC()
+    return MapView(viewModel: ioc.resolve())
 }
 

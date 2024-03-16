@@ -7,7 +7,12 @@ final class MapViewModel: ObservableObject {
     @Published var dragStart: CGSize = .zero
     @Published var drag: CGSize = .zero
     
-    @Published var map: MapModel = .init(xChunks: 4, yChunks: 4)
+    @Published var map: MapModel
+    
+    init(levelFactory: LevelFactory) {
+        let level = levelFactory.make()
+        self.map = level.map
+    }
     
     var totalOffset: CGSize {
         return CGSize(

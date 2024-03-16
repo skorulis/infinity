@@ -4,10 +4,10 @@ import Foundation
 
 struct MapChunk {
     
-    let topCorner: Coord
+    let topCorner: ChunkCoord
     var squares: [[MapSquare]]
     
-    init(topCorner: Coord) {
+    init(topCorner: ChunkCoord) {
         self.topCorner = topCorner
         let emptyRow = Array(repeating: MapSquare(), count: MapConstants.chunkSize)
         squares = Array(repeating: emptyRow, count: MapConstants.chunkSize)

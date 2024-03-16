@@ -29,7 +29,7 @@ extension VisibleChunksView: View {
     }
     
     private func chunk(x: Int, y: Int) -> some View {
-        let coord = Coord(x: x, y: y)
+        let coord = ChunkCoord(x: x, y: y)
         let chunk = map.chunk(at: coord)
         return MapChunkView(chunk: chunk)
             .border(Color.gray)
