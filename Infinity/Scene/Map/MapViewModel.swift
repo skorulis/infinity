@@ -8,10 +8,12 @@ final class MapViewModel: ObservableObject {
     @Published var drag: CGSize = .zero
     
     @Published var map: MapModel
+    @Published var player: Player
     
     init(levelFactory: LevelFactory) {
         let level = levelFactory.make()
         self.map = level.map
+        self.player = level.player
     }
     
     var totalOffset: CGSize {
@@ -24,6 +26,9 @@ final class MapViewModel: ObservableObject {
     func onTap(location: CGPoint) {
         let offSetLocation = CGPoint(x: location.x - totalOffset.width, y: location.y - totalOffset.height)
         let coord = MapMath.toMapCoord(screen: offSetLocation)
+        
+        map.move(player: &player, to: coord)
+        
         print("Coord = \(coord)")
     }
 }

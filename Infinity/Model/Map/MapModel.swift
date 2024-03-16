@@ -31,9 +31,25 @@ struct MapModel {
     }
     
     mutating func add(player: Player) {
-        let chunkCoord = player.coord.chunk
+        edit(coord: player.coord) { chunk in
+            chunk.squares[player.coord.y][player.coord.x].player = player
+        }
+    }
+    
+    mutating func edit(coord: ExactCoord, operation: (inout MapChunk) -> Void) {
+        let chunkCoord = coord.chunk
         var chunk = self.chunk(at: chunkCoord)
-        chunk.squares[player.coord.y][player.coord.x].player = player
+        operation(&chunk)
         chunks[chunkCoord] = chunk
+    }
+    
+    mutating func move(player: inout Player, to: ExactCoord) {
+        edit(coord: player.coord) { chunk in
+            chunk.squares[player.coord.y][player.coord.x].player = nil
+        }
+        player.coord = to
+        edit(coord: player.coord) { chunk in
+            chunk.squares[player.coord.y][player.coord.x].player = player
+        }
     }
 }

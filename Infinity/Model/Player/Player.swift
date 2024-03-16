@@ -4,7 +4,7 @@ import Foundation
 
 struct Player {
     let id: UUID = .init()
-    let coord: ExactCoord = .init(x: 0, y: 0)
+    var coord: ExactCoord = .init(x: 0, y: 0)
     
     let character: String = "@"
 }
