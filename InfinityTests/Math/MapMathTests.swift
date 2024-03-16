@@ -14,7 +14,7 @@ final class InfinityTests: XCTestCase {
         
         XCTAssertEqual(
             MapMath.toMapCoord(screen: .init(x: 100, y: 150)),
-            Coord(x: 6, y: 9)
+            ExactCoord(x: 6, y: 9)
         )
         
     }

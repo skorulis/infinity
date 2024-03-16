@@ -31,6 +31,10 @@
 		FA8A7F692BA5653F00894B8C /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F682BA5653F00894B8C /* IOC.swift */; };
 		FA8A7F6C2BA5684800894B8C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F6B2BA5684800894B8C /* LevelModel.swift */; };
 		FA8A7F6F2BA568F700894B8C /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F6E2BA568F700894B8C /* LevelFactory.swift */; };
+		FA8A7F722BA5839400894B8C /* MapPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F712BA5839400894B8C /* MapPath.swift */; };
+		FA8A7F742BA583B100894B8C /* PathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F732BA583B100894B8C /* PathFinder.swift */; };
+		FA8A7F772BA5936500894B8C /* AStar in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A7F762BA5936500894B8C /* AStar */; };
+		FA8A7F7B2BA595FD00894B8C /* PathFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,9 @@
 		FA8A7F682BA5653F00894B8C /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA8A7F6B2BA5684800894B8C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		FA8A7F6E2BA568F700894B8C /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
+		FA8A7F712BA5839400894B8C /* MapPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPath.swift; sourceTree = "<group>"; };
+		FA8A7F732BA583B100894B8C /* PathFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFinder.swift; sourceTree = "<group>"; };
+		FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFinderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8A7F772BA5936500894B8C /* AStar in Frameworks */,
 				FA8A7F672BA5653900894B8C /* ASKCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +192,7 @@
 		FA8A7F302B9F0CD600894B8C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F702BA5838F00894B8C /* Path */,
 				FA8A7F312B9F0E2F00894B8C /* MapModel.swift */,
 				FA8A7F332B9F0E4500894B8C /* MapSquare.swift */,
 				FA8A7F3D2BA1904400894B8C /* MapChunk.swift */,
@@ -226,6 +235,7 @@
 		FA8A7F522BA5445A00894B8C /* InfinityTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA8A7F782BA595F500894B8C /* Service */,
 				FA8A7F5A2BA5446900894B8C /* Math */,
 			);
 			path = InfinityTests;
@@ -261,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8A7F622BA564D600894B8C /* MapFactory.swift */,
+				FA8A7F732BA583B100894B8C /* PathFinder.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -289,6 +300,30 @@
 			path = Level;
 			sourceTree = "<group>";
 		};
+		FA8A7F702BA5838F00894B8C /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F712BA5839400894B8C /* MapPath.swift */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
+		FA8A7F782BA595F500894B8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F792BA595F500894B8C /* Map */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA8A7F792BA595F500894B8C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +342,7 @@
 			name = Infinity;
 			packageProductDependencies = (
 				FA8A7F662BA5653900894B8C /* ASKCore */,
+				FA8A7F762BA5936500894B8C /* AStar */,
 			);
 			productName = Infinity;
 			productReference = FA8A7F0D2B9EF2D600894B8C /* Infinity.app */;
@@ -361,6 +397,7 @@
 			mainGroup = FA8A7F042B9EF2D600894B8C;
 			packageReferences = (
 				FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */,
+				FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */,
 			);
 			productRefGroup = FA8A7F0E2B9EF2D600894B8C /* Products */;
 			projectDirPath = "";
@@ -408,8 +445,10 @@
 				FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */,
 				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
 				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
+				FA8A7F722BA5839400894B8C /* MapPath.swift in Sources */,
 				FA8A7F4C2BA5338B00894B8C /* MapMath.swift in Sources */,
 				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
+				FA8A7F742BA583B100894B8C /* PathFinder.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
 				FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */,
 				FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */,
@@ -423,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8A7F7B2BA595FD00894B8C /* PathFinderTests.swift in Sources */,
 				FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +735,14 @@
 				kind = branch;
 			};
 		};
+		FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dev1an/A-Star?tab=readme-ov-file";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -702,6 +750,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */;
 			productName = ASKCore;
+		};
+		FA8A7F762BA5936500894B8C /* AStar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */;
+			productName = AStar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

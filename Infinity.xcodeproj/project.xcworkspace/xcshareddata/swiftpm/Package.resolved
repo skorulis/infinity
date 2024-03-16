@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "a-star?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Dev1an/A-Star?tab=readme-ov-file",
+      "state" : {
+        "revision" : "d058ecc05f48551b1cc3d4e68f365f655f8febcc",
+        "version" : "2.1.0"
+      }
+    },
+    {
       "identity" : "askcore",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/skorulis/ASKCore",
