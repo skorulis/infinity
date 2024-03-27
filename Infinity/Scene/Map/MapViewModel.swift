@@ -10,10 +10,13 @@ final class MapViewModel: ObservableObject {
     @Published var map: MapModel
     @Published var player: Player
     
-    init(levelFactory: LevelFactory) {
+    private let pathFinder: PathFinder
+    
+    init(levelFactory: LevelFactory, pathFinder: PathFinder) {
         let level = levelFactory.make()
         self.map = level.map
         self.player = level.player
+        self.pathFinder = pathFinder
     }
     
     var totalOffset: CGSize {
@@ -27,8 +30,15 @@ final class MapViewModel: ObservableObject {
         let offSetLocation = CGPoint(x: location.x - totalOffset.width, y: location.y - totalOffset.height)
         let coord = MapMath.toMapCoord(screen: offSetLocation)
         
-        map.move(player: &player, to: coord)
+        if player.coord == coord {
+            return
+        }
         
-        print("Coord = \(coord)")
+        let path = pathFinder.path(from: player.coord, to: coord, in: map)
+        guard path.path.count > 1 else {
+            return
+        }
+        
+        map.move(player: &player, to: path.path[1])
     }
 }

@@ -24,8 +24,13 @@ extension MapModel: Graph {
         var result = Set<ExactCoord>()
         for y in -1...1 {
             for x in -1...1 {
-                guard x != 0 && y != 0  else { continue }
-                result.insert(.init(x: node.x + x, y: node.y + y))
+                guard x != 0 || y != 0  else { continue }
+                let posX = node.x + x
+                let posY = node.y + y
+                if posX < 0 || posY < 0 {
+                    continue
+                }
+                result.insert(.init(x: posX, y: posY))
             }
         }
         return result
@@ -38,10 +43,10 @@ extension MapModel: Graph {
     }
     
     func cost(from start: ExactCoord, to end: ExactCoord) -> Float {
-        print("Check cost from \(start) to \(end)")
         let xDiff = abs(start.x - end.x)
         let yDiff = abs(start.y - end.y)
-        return Float(xDiff + yDiff)
+        let result = Float(xDiff + yDiff)
+        return result
     }
     
 }

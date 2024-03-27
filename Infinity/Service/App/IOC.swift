@@ -17,6 +17,7 @@ public final class IOC: IOCService {
     private func registerServices() {
         container.autoregister(MapFactory.self, initializer: MapFactory.init)
         container.autoregister(LevelFactory.self, initializer: LevelFactory.init)
+        container.autoregister(PathFinder.self, initializer: PathFinder.init)
     }
     
     private func registerViewModels() {
