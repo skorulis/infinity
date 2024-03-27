@@ -4,6 +4,16 @@ import Foundation
 
 public struct Health {
     
-    var current: Int
-    var max: Int
+    private(set) var current: Int
+    private(set) var maxValue: Int
+    
+    init(current: Int, max: Int) {
+        self.current = current
+        self.maxValue = max
+    }
+    
+    mutating func take(amount: Int) {
+        precondition(amount >= 0)
+        self.current = max(current - amount, 0)
+    }
 }

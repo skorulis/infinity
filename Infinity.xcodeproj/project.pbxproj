@@ -12,6 +12,12 @@
 		FA4447702BB3F325009ABE7F /* SkillValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44476F2BB3F325009ABE7F /* SkillValues.swift */; };
 		FA4447722BB3F42C009ABE7F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447712BB3F42C009ABE7F /* Entity.swift */; };
 		FA4447742BB3F58D009ABE7F /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447732BB3F58D009ABE7F /* Health.swift */; };
+		FA4447772BB3F6EE009ABE7F /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447762BB3F6EE009ABE7F /* Ability.swift */; };
+		FA44477A2BB3F788009ABE7F /* AbilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447792BB3F788009ABE7F /* AbilityService.swift */; };
+		FA44477C2BB3F7EB009ABE7F /* AbilityUseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */; };
+		FA44477F2BB3F8C7009ABE7F /* AbilityServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */; };
+		FA4447832BB3FD3F009ABE7F /* ImmediateEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */; };
+		FA4447852BB3FD77009ABE7F /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447842BB3FD77009ABE7F /* Effect.swift */; };
 		FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */; };
 		FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F212B9EFA6200894B8C /* ContentView.swift */; };
 		FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F252B9EFA6D00894B8C /* MapView.swift */; };
@@ -58,6 +64,12 @@
 		FA44476F2BB3F325009ABE7F /* SkillValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillValues.swift; sourceTree = "<group>"; };
 		FA4447712BB3F42C009ABE7F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		FA4447732BB3F58D009ABE7F /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		FA4447762BB3F6EE009ABE7F /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
+		FA4447792BB3F788009ABE7F /* AbilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityService.swift; sourceTree = "<group>"; };
+		FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityUseResult.swift; sourceTree = "<group>"; };
+		FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityServiceTests.swift; sourceTree = "<group>"; };
+		FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmediateEffect.swift; sourceTree = "<group>"; };
+		FA4447842BB3FD77009ABE7F /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		FA8A7F0D2B9EF2D600894B8C /* Infinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfinityApp.swift; sourceTree = "<group>"; };
 		FA8A7F212B9EFA6200894B8C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +153,40 @@
 			path = Skill;
 			sourceTree = "<group>";
 		};
+		FA4447752BB3F6E8009ABE7F /* Ability */ = {
+			isa = PBXGroup;
+			children = (
+				FA4447762BB3F6EE009ABE7F /* Ability.swift */,
+				FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */,
+			);
+			path = Ability;
+			sourceTree = "<group>";
+		};
+		FA4447782BB3F77A009ABE7F /* Ability */ = {
+			isa = PBXGroup;
+			children = (
+				FA4447792BB3F788009ABE7F /* AbilityService.swift */,
+			);
+			path = Ability;
+			sourceTree = "<group>";
+		};
+		FA44477D2BB3F8C0009ABE7F /* Ability */ = {
+			isa = PBXGroup;
+			children = (
+				FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */,
+			);
+			path = Ability;
+			sourceTree = "<group>";
+		};
+		FA4447812BB3FCE4009ABE7F /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */,
+				FA4447842BB3FD77009ABE7F /* Effect.swift */,
+			);
+			path = Effect;
+			sourceTree = "<group>";
+		};
 		FA8A7F042B9EF2D600894B8C = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +252,8 @@
 		FA8A7F292B9F0C6A00894B8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA4447812BB3FCE4009ABE7F /* Effect */,
+				FA4447752BB3F6E8009ABE7F /* Ability */,
 				FA44476C2BB3F2B2009ABE7F /* Skill */,
 				FA44476B2BB3F287009ABE7F /* Entity */,
 				FA4447682BB3F19E009ABE7F /* Combat */,
@@ -306,6 +354,7 @@
 		FA8A7F602BA564BE00894B8C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA4447782BB3F77A009ABE7F /* Ability */,
 				FA4447672BB3F14A009ABE7F /* Combat */,
 				FA8A7F6D2BA568F100894B8C /* Level */,
 				FA8A7F642BA564E500894B8C /* App */,
@@ -358,6 +407,7 @@
 		FA8A7F782BA595F500894B8C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA44477D2BB3F8C0009ABE7F /* Ability */,
 				FA8A7F792BA595F500894B8C /* Map */,
 			);
 			path = Service;
@@ -482,17 +532,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */,
+				FA4447772BB3F6EE009ABE7F /* Ability.swift in Sources */,
 				FA4447722BB3F42C009ABE7F /* Entity.swift in Sources */,
 				FA8A7F632BA564D600894B8C /* MapFactory.swift in Sources */,
 				FA8A7F692BA5653F00894B8C /* IOC.swift in Sources */,
 				FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */,
+				FA4447852BB3FD77009ABE7F /* Effect.swift in Sources */,
 				FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */,
 				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
 				FA4447742BB3F58D009ABE7F /* Health.swift in Sources */,
 				FA8A7F6C2BA5684800894B8C /* LevelModel.swift in Sources */,
+				FA4447832BB3FD3F009ABE7F /* ImmediateEffect.swift in Sources */,
+				FA44477A2BB3F788009ABE7F /* AbilityService.swift in Sources */,
 				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
 				FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */,
 				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
+				FA44477C2BB3F7EB009ABE7F /* AbilityUseResult.swift in Sources */,
 				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
 				FA8A7F722BA5839400894B8C /* MapPath.swift in Sources */,
 				FA44476A2BB3F20C009ABE7F /* Damagable.swift in Sources */,
@@ -516,6 +571,7 @@
 			files = (
 				FA8A7F7B2BA595FD00894B8C /* PathFinderTests.swift in Sources */,
 				FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */,
+				FA44477F2BB3F8C7009ABE7F /* AbilityServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
