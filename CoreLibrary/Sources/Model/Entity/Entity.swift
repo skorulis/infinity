@@ -2,14 +2,24 @@
 
 import Foundation
 
-typealias EntityID = UUID
+public typealias EntityID = UUID
 
 public struct Entity {
     
-    let id: EntityID = .init()
+    public let id: EntityID = .init()
     
-    var skills: SkillValues = .init()
-    var health: Health = .init(current: 50, max: 50)
+    public var skills: SkillValues
+    public var health: Health
+    
+    public init(
+        skills: SkillValues = .init(),
+        health: Health = .init(current: 50, max: 50)
+    ) {
+        self.skills = skills
+        self.health = health
+        
+        self.reset()
+    }
     
     mutating func apply(effect: ImmediateEffect) {
         switch effect {
@@ -18,6 +28,11 @@ public struct Entity {
         default:
             break // Do nothing by default    
         }
+    }
+    
+    public mutating func reset() {
+        updateCalculations()
+        health.reset()
     }
     
     mutating func updateCalculations() {

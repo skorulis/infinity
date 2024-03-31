@@ -7,7 +7,7 @@ public struct Health {
     private(set) var current: Int
     var maxValue: Int
     
-    init(current: Int, max: Int) {
+    public init(current: Int, max: Int) {
         self.current = current
         self.maxValue = max
     }
@@ -15,5 +15,9 @@ public struct Health {
     mutating func take(amount: Int) {
         precondition(amount >= 0)
         self.current = max(current - amount, 0)
+    }
+    
+    mutating func reset() {
+        self.current = maxValue
     }
 }

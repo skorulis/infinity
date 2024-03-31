@@ -9,7 +9,8 @@ struct ContentView: View {
     @Environment(\.factory) private var factory
     
     var body: some View {
-        MapView(viewModel: factory.resolve())
+        CombatSimulationView(viewModel: factory.resolve())
+        //MapView(viewModel: factory.resolve())
     }
 }
 

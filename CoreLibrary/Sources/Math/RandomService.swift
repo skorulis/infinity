@@ -2,31 +2,33 @@
 
 import Foundation
 
-protocol RandomService {
+public protocol RandomService {
     
     /// A random number between the 2 numbers (inclusive)
     func int(from: Int, to: Int) -> Int
 }
 
-extension RandomService {
+public extension RandomService {
     func int(range: ClosedRange<Int>) -> Int {
         return int(from: range.lowerBound, to: range.upperBound)
     }
 }
 
-final class DefaultRandomService: RandomService {
-    func int(from: Int, to: Int) -> Int {
+public final class DefaultRandomService: RandomService {
+    public func int(from: Int, to: Int) -> Int {
         return Int.random(in: from...to)
     }
+    
+    public init() {}
 }
 
 /// Always gives either the maximum or minimum value
-final class FakeRandomService: RandomService {
+public final class FakeRandomService: RandomService {
     
-    var strategy: Strategy = .mid
-    var nextInts: [Int] = []
+    public var strategy: Strategy = .mid
+    public var nextInts: [Int] = []
     
-    func int(from: Int, to: Int) -> Int {
+    public func int(from: Int, to: Int) -> Int {
         if !nextInts.isEmpty {
             return nextInts.removeFirst()
         }
@@ -40,7 +42,7 @@ final class FakeRandomService: RandomService {
         }
     }
     
-    enum Strategy {
+    public enum Strategy {
         case min
         case max
         case mid

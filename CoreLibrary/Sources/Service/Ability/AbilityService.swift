@@ -2,11 +2,11 @@
 
 import Foundation
 
-final class AbilityService {
+public final class AbilityService {
     
     let random: RandomService
     
-    init(random: RandomService) {
+    public init(random: RandomService) {
         self.random = random
     }
     

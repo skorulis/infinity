@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum Skill: String, Equatable, Codable {
+public enum Skill: String, Equatable, Codable {
     // How much damage an entity can take
     case toughness
     

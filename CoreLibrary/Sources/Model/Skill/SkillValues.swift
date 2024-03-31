@@ -4,9 +4,11 @@ import Foundation
 
 public struct SkillValues {
     
-    private var levels: [Skill: Int] = [:]
+    private var levels: [Skill: Int]
     
-    public init() { }
+    public init(levels: [Skill: Int] = [:]) {
+        self.levels = levels
+    }
     
     func level(skill: Skill) -> Int {
         return levels[skill] ?? 1
