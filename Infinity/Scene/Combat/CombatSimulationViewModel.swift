@@ -16,7 +16,7 @@ final class CombatSimulationViewModel: ObservableObject {
 extension CombatSimulationViewModel {
     
     func simulate() {
-        var e1 = Entity(skills: .init(levels: [.dexterity: 5]))
+        let e1 = Entity(skills: .init(levels: [.dexterity: 5]))
         let e2 = Entity()
         
         let result = simulationService.simulate(entities: [e1, e2], runs: 1000)

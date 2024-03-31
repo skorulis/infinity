@@ -41,12 +41,12 @@ public final class AbilityService {
     }
     
     private func mainHandAttack(source: Entity, target: Entity) -> [Effect] {
-        let hitChance = random.int(from: 0, to: 100) + source.toHitBonus
+        let hitChance = random.int(from: 0, to: 100) + source.skills.toHitBonus
         let defence = 50
         if hitChance < defence {
             return []
         }
-        let damageRange = (2...10).move(distance: source.strengthDamageBonus)
+        let damageRange = (2...10).move(distance: source.skills.strengthDamageBonus)
         let damage = random.int(range: damageRange)
         let damageEffect = ImmediateEffect.damage(damage)
         return [.immediate(target.id, damageEffect)]

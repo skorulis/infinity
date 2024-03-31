@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 16/3/2024.
 
+import CoreLibrary
 import Foundation
 @testable import Infinity
 import XCTest

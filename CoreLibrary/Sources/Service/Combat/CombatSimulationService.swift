@@ -32,7 +32,7 @@ public final class CombatSimulationService {
             entity2.id: entity2
         ]
         let hasFinished: () -> Bool = {
-            return entities.values.contains(where: { $0.health.current <= 0})
+            return entities.values.contains(where: { $0.health <= 0})
         }
         
         while !hasFinished() {
@@ -69,7 +69,7 @@ public extension CombatSimulationService {
         public let outputEntities: [Entity]
         
         public var winner: Entity? {
-            return outputEntities.first(where: {$0.health.current > 0})
+            return outputEntities.first(where: {$0.health > 0})
         }
     }
     

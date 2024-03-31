@@ -7,16 +7,17 @@ public typealias EntityID = UUID
 public struct Entity {
     
     public let id: EntityID = .init()
+    private var properName: String?
     
+    public let race: Race
     public var skills: SkillValues
-    public var health: Health
+    public private(set) var derived: DerivedAttributeValues = .init(values: [:])
     
-    public init(
-        skills: SkillValues = .init(),
-        health: Health = .init(current: 50, max: 50)
-    ) {
+    public var health: Int = 0
+    
+    public init(race: Race, skills: SkillValues = .init()) {
+        self.race = race
         self.skills = skills
-        self.health = health
         
         self.reset()
     }
@@ -24,19 +25,28 @@ public struct Entity {
     mutating func apply(effect: ImmediateEffect) {
         switch effect {
         case let .damage(amount):
-            health.take(amount: amount)
+            take(damage: amount)
         default:
             break // Do nothing by default    
         }
     }
     
     public mutating func reset() {
-        updateCalculations()
-        health.reset()
+        calulateDerivedValues()
+        health = derived.value(.maxHealth)
     }
     
-    mutating func updateCalculations() {
-        health.maxValue = healthCalculation
+    mutating func take(damage: Int) {
+        precondition(damage >= 0)
+        self.health = max(health - damage, 0)
+    }
+    
+    mutating func calulateDerivedValues() {
+        self.derived = skills.derivedAttributes + race.derivedAttributes
+    }
+    
+    var level: Int {
+        return skills.maxLevel
     }
 
 }

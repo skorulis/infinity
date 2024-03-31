@@ -13,4 +13,10 @@ public struct SkillValues {
     func level(skill: Skill) -> Int {
         return levels[skill] ?? 1
     }
+    
+    var maxLevel: Int {
+        return levels.reduce(1) { partialResult, next in
+            return max(partialResult, next.value)
+        }
+    }
 }
