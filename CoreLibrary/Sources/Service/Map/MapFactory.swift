@@ -2,9 +2,11 @@
 
 import Foundation
 
-struct MapFactory {
+public struct MapFactory {
     
-    func make() -> MapModel {
+    public init() {}
+    
+    public func make() -> MapModel {
         return .init(xChunks: 4, yChunks: 4)
     }
 }

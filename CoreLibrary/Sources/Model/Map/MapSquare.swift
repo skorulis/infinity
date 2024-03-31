@@ -2,13 +2,13 @@
 
 import Foundation
 
-struct MapSquare {
+public struct MapSquare {
     
-    var items: [String] = []
+    public var items: [String] = []
     
-    var player: Player?
+    public var player: Player?
     
-    var character: String {
+    public var character: String {
         return player?.character ?? "░"
     }
     

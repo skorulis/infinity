@@ -2,9 +2,9 @@
 
 import Foundation
 
-struct MapPath {
-    let from: ExactCoord
-    let to: ExactCoord
+public struct MapPath {
+    public let from: ExactCoord
+    public let to: ExactCoord
     
-    let path: [ExactCoord]
+    public let path: [ExactCoord]
 }

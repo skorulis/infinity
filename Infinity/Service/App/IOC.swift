@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 16/3/2024.
 
+import CoreLibrary
 import ASKCore
 import Foundation
 import Swinject
@@ -7,7 +8,7 @@ import SwinjectAutoregistration
 
 public final class IOC: IOCService {
  
-    override init(purpose: IOCPurpose = .testing) {
+    public override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
         
         registerServices()
@@ -21,6 +22,6 @@ public final class IOC: IOCService {
     }
     
     private func registerViewModels() {
-        //container.autoregister(MapViewModel.self, initializer: MapViewModel.init)
+        container.autoregister(MapViewModel.self, initializer: MapViewModel.init)
     }
 }

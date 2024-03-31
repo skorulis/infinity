@@ -2,18 +2,18 @@
 
 import Foundation
 
-struct MapChunk {
+public struct MapChunk {
     
-    let topCorner: ChunkCoord
-    var squares: [[MapSquare]]
+    public let topCorner: ChunkCoord
+    public var squares: [[MapSquare]]
     
-    init(topCorner: ChunkCoord) {
+    public init(topCorner: ChunkCoord) {
         self.topCorner = topCorner
         let emptyRow = Array(repeating: MapSquare(), count: MapConstants.chunkSize)
         squares = Array(repeating: emptyRow, count: MapConstants.chunkSize)
     }
     
-    func square(x: Int, y: Int) -> MapSquare {
+    public func square(x: Int, y: Int) -> MapSquare {
         return squares[y][x]
     }
     

@@ -2,9 +2,11 @@
 
 import Foundation
 
-struct PathFinder {
+public struct PathFinder {
     
-    func path(from: ExactCoord, to: ExactCoord, in map: MapModel) -> MapPath {
+    public init() {}
+    
+    public func path(from: ExactCoord, to: ExactCoord, in map: MapModel) -> MapPath {
         let path = map.findPath(from: from, to: to)
         
         return MapPath(
@@ -17,9 +19,9 @@ struct PathFinder {
 }
 
 extension MapModel: Graph {
-    typealias Node = ExactCoord
+    public typealias Node = ExactCoord
     
-    func nodesAdjacent(to node: ExactCoord) -> Set<ExactCoord> {
+    public func nodesAdjacent(to node: ExactCoord) -> Set<ExactCoord> {
         var result = Set<ExactCoord>()
         for y in -1...1 {
             for x in -1...1 {
@@ -35,13 +37,13 @@ extension MapModel: Graph {
         return result
     }
     
-    func estimatedCost(from start: ExactCoord, to end: ExactCoord) -> Float {
+    public func estimatedCost(from start: ExactCoord, to end: ExactCoord) -> Float {
         let xDiff = abs(start.x - end.x)
         let yDiff = abs(start.y - end.y)
         return Float(xDiff + yDiff)
     }
     
-    func cost(from start: ExactCoord, to end: ExactCoord) -> Float {
+    public func cost(from start: ExactCoord, to end: ExactCoord) -> Float {
         let xDiff = abs(start.x - end.x)
         let yDiff = abs(start.y - end.y)
         let result = Float(xDiff + yDiff)

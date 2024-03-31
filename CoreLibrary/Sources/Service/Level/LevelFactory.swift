@@ -2,11 +2,15 @@
 
 import Foundation
 
-struct LevelFactory {
+public struct LevelFactory {
     
-    let mapFactory: MapFactory
+    public let mapFactory: MapFactory
     
-    func make() -> LevelModel {
+    public init(mapFactory: MapFactory) {
+        self.mapFactory = mapFactory
+    }
+    
+    public func make() -> LevelModel {
         var map = mapFactory.make()
         let player = Player()
         map.add(player: player)

@@ -2,13 +2,13 @@
 
 import Foundation
 
-struct MapModel {
+public struct MapModel {
     
-    let xChunks: Int
-    let yChunks: Int
+    public let xChunks: Int
+    public let yChunks: Int
     private(set) var chunks: [ChunkCoord: MapChunk] = [:]
     
-    init(xChunks: Int, yChunks: Int) {
+    public init(xChunks: Int, yChunks: Int) {
         self.xChunks = xChunks
         self.yChunks = yChunks
         for y in 0..<yChunks {
@@ -19,7 +19,7 @@ struct MapModel {
         }
     }
     
-    func chunk(at: ChunkCoord) -> MapChunk {
+    public func chunk(at: ChunkCoord) -> MapChunk {
         guard let chunk = chunks[at] else {
             fatalError("Chunk should have been pre created")
         }
@@ -30,20 +30,20 @@ struct MapModel {
         return chunk(at: at.chunk)
     }
     
-    mutating func add(player: Player) {
+    public mutating func add(player: Player) {
         edit(coord: player.coord) { chunk in
             chunk.squares[player.coord.y][player.coord.x].player = player
         }
     }
     
-    mutating func edit(coord: ExactCoord, operation: (inout MapChunk) -> Void) {
+    public mutating func edit(coord: ExactCoord, operation: (inout MapChunk) -> Void) {
         let chunkCoord = coord.chunk
         var chunk = self.chunk(at: chunkCoord)
         operation(&chunk)
         chunks[chunkCoord] = chunk
     }
     
-    mutating func move(player: inout Player, to: ExactCoord) {
+    public mutating func move(player: inout Player, to: ExactCoord) {
         edit(coord: player.coord) { chunk in
             chunk.squares[player.coord.y][player.coord.x].player = nil
         }

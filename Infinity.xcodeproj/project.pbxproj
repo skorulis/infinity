@@ -20,6 +20,8 @@
 		FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */; };
 		FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */; };
 		FA8A7F672BA5653900894B8C /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A7F662BA5653900894B8C /* ASKCore */; };
+		FAC2E3AE2BB8F18B00E7C1A5 /* CoreLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = FAC2E3AD2BB8F18B00E7C1A5 /* CoreLibrary */; };
+		FAC2E3B22BB8F34300E7C1A5 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2E3AF2BB8F34200E7C1A5 /* IOC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA2150FA2BB8D40C00570EF4 /* CoreLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreLibrary; sourceTree = "<group>"; };
 		FA8A7F0D2B9EF2D600894B8C /* Infinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfinityApp.swift; sourceTree = "<group>"; };
 		FA8A7F212B9EFA6200894B8C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleChunksView.swift; sourceTree = "<group>"; };
 		FA8A7F512BA5445A00894B8C /* InfinityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMathTests.swift; sourceTree = "<group>"; };
+		FAC2E3AF2BB8F34200E7C1A5 /* IOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8A7F672BA5653900894B8C /* ASKCore in Frameworks */,
+				FAC2E3AE2BB8F18B00E7C1A5 /* CoreLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +75,6 @@
 		FA8A7F042B9EF2D600894B8C = {
 			isa = PBXGroup;
 			children = (
-				FA2150FA2BB8D40C00570EF4 /* CoreLibrary */,
 				FA8A7F0F2B9EF2D600894B8C /* Infinity */,
 				FA8A7F522BA5445A00894B8C /* InfinityTests */,
 				FA8A7F0E2B9EF2D600894B8C /* Products */,
@@ -91,6 +93,7 @@
 		FA8A7F0F2B9EF2D600894B8C /* Infinity */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2E3B12BB8F34200E7C1A5 /* Service */,
 				FA8A7F422BA1AE5700894B8C /* Util */,
 				FA8A7F2A2B9F0C8800894B8C /* Resource */,
 				FA8A7F1E2B9EFA6200894B8C /* Scene */,
@@ -178,6 +181,22 @@
 			path = Math;
 			sourceTree = "<group>";
 		};
+		FAC2E3B02BB8F34200E7C1A5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2E3AF2BB8F34200E7C1A5 /* IOC.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FAC2E3B12BB8F34200E7C1A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2E3B02BB8F34200E7C1A5 /* App */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +215,7 @@
 			name = Infinity;
 			packageProductDependencies = (
 				FA8A7F662BA5653900894B8C /* ASKCore */,
+				FAC2E3AD2BB8F18B00E7C1A5 /* CoreLibrary */,
 			);
 			productName = Infinity;
 			productReference = FA8A7F0D2B9EF2D600894B8C /* Infinity.app */;
@@ -250,7 +270,7 @@
 			mainGroup = FA8A7F042B9EF2D600894B8C;
 			packageReferences = (
 				FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */,
-				FA2150FB2BB8D90500570EF4 /* XCLocalSwiftPackageReference "CoreLibrary" */,
+				FAC2E3AC2BB8F18B00E7C1A5 /* XCLocalSwiftPackageReference "CoreLibrary" */,
 			);
 			productRefGroup = FA8A7F0E2B9EF2D600894B8C /* Products */;
 			projectDirPath = "";
@@ -291,6 +311,7 @@
 				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
 				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
 				FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */,
+				FAC2E3B22BB8F34300E7C1A5 /* IOC.swift in Sources */,
 				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
 				FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */,
@@ -566,7 +587,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		FA2150FB2BB8D90500570EF4 /* XCLocalSwiftPackageReference "CoreLibrary" */ = {
+		FAC2E3AC2BB8F18B00E7C1A5 /* XCLocalSwiftPackageReference "CoreLibrary" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CoreLibrary;
 		};
@@ -588,6 +609,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */;
 			productName = ASKCore;
+		};
+		FAC2E3AD2BB8F18B00E7C1A5 /* CoreLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

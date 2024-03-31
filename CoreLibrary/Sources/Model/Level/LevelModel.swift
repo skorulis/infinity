@@ -2,11 +2,11 @@
 
 import Foundation
 
-struct LevelModel {
-    var map: MapModel
-    var player: Player
+public struct LevelModel {
+    public var map: MapModel
+    public var player: Player
     
-    init(map: MapModel, player: Player) {
+    public init(map: MapModel, player: Player) {
         self.map = map
         self.player = player
     }

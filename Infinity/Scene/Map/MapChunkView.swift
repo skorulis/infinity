@@ -1,5 +1,6 @@
 //Created by Alexander Skorulis on 13/3/2024.
 
+import CoreLibrary
 import SwiftUI
 
 struct MapChunkView: View {

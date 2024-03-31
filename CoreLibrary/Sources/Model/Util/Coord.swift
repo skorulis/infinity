@@ -3,29 +3,34 @@
 import Foundation
 
 /// A coordinate referencing an exact spot on the map
-struct ExactCoord: Hashable, Equatable, CustomDebugStringConvertible {
-    let x: Int
-    let y: Int
+public struct ExactCoord: Hashable, Equatable, CustomDebugStringConvertible {
+    public let x: Int
+    public let y: Int
     
-    static var zero: ExactCoord = .init(x: 0, y: 0)
+    public static var zero: ExactCoord = .init(x: 0, y: 0)
     
-    var debugDescription: String {
+    public var debugDescription: String {
         "(\(x), \(y))"
     }
     
-    var chunk: ChunkCoord {
+    public var chunk: ChunkCoord {
         return ChunkCoord(x: x / MapConstants.chunkSize, y: y / MapConstants.chunkSize)
     }
 }
 
 /// A coordinate referncing a chunk
-struct ChunkCoord: Hashable, Equatable {
-    let x: Int
-    let y: Int
+public struct ChunkCoord: Hashable, Equatable {
+    public let x: Int
+    public let y: Int
     
-    static var zero: ChunkCoord = .init(x: 0, y: 0)
+    public init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
     
-    var debugDescription: String {
+    public static var zero: ChunkCoord = .init(x: 0, y: 0)
+    
+    public var debugDescription: String {
         "(\(x), \(y))"
     }
 }

@@ -2,9 +2,9 @@
 
 import Foundation
 
-struct Player {
-    let id: UUID = .init()
-    var coord: ExactCoord = .init(x: 0, y: 0)
+public struct Player {
+    public let id: UUID = .init()
+    public var coord: ExactCoord = .init(x: 0, y: 0)
     
-    let character: String = "@"
+    public let character: String = "@"
 }
