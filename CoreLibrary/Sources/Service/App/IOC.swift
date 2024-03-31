@@ -21,6 +21,6 @@ public final class IOC: IOCService {
     }
     
     private func registerViewModels() {
-        container.autoregister(MapViewModel.self, initializer: MapViewModel.init)
+        //container.autoregister(MapViewModel.self, initializer: MapViewModel.init)
     }
 }

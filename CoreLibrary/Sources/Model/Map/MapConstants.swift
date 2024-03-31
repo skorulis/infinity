@@ -1,8 +1,8 @@
-//Created by Alexander Skorulis on 13/3/2024.
+//  Created by Alexander Skorulis on 31/3/2024.
 
 import Foundation
 
-enum MapConstants {
+public enum MapConstants {
     
     // How many tiles in a chunk
     static let chunkSize: Int = 20

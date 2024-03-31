@@ -5,7 +5,7 @@ import Foundation
 public struct Health {
     
     private(set) var current: Int
-    private(set) var maxValue: Int
+    var maxValue: Int
     
     init(current: Int, max: Int) {
         self.current = current

@@ -3,49 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA44476A2BB3F20C009ABE7F /* Damagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447692BB3F20C009ABE7F /* Damagable.swift */; };
-		FA44476E2BB3F2B8009ABE7F /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44476D2BB3F2B8009ABE7F /* Skill.swift */; };
-		FA4447702BB3F325009ABE7F /* SkillValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44476F2BB3F325009ABE7F /* SkillValues.swift */; };
-		FA4447722BB3F42C009ABE7F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447712BB3F42C009ABE7F /* Entity.swift */; };
-		FA4447742BB3F58D009ABE7F /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447732BB3F58D009ABE7F /* Health.swift */; };
-		FA4447772BB3F6EE009ABE7F /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447762BB3F6EE009ABE7F /* Ability.swift */; };
-		FA44477A2BB3F788009ABE7F /* AbilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447792BB3F788009ABE7F /* AbilityService.swift */; };
-		FA44477C2BB3F7EB009ABE7F /* AbilityUseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */; };
-		FA44477F2BB3F8C7009ABE7F /* AbilityServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */; };
-		FA4447832BB3FD3F009ABE7F /* ImmediateEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */; };
-		FA4447852BB3FD77009ABE7F /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4447842BB3FD77009ABE7F /* Effect.swift */; };
 		FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */; };
 		FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F212B9EFA6200894B8C /* ContentView.swift */; };
 		FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F252B9EFA6D00894B8C /* MapView.swift */; };
 		FA8A7F282B9EFB5000894B8C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */; };
 		FA8A7F2E2B9F0C8800894B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */; };
 		FA8A7F2F2B9F0C8800894B8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F2D2B9F0C8800894B8C /* Preview Assets.xcassets */; };
-		FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F312B9F0E2F00894B8C /* MapModel.swift */; };
-		FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F332B9F0E4500894B8C /* MapSquare.swift */; };
 		FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */; };
-		FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F392BA18B6400894B8C /* MapConstants.swift */; };
 		FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */; };
-		FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F3D2BA1904400894B8C /* MapChunk.swift */; };
 		FA8A7F412BA1AD5000894B8C /* properhitboxglobal.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */; };
 		FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */; };
-		FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F462BA522FE00894B8C /* Coord.swift */; };
 		FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */; };
-		FA8A7F4C2BA5338B00894B8C /* MapMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F4B2BA5338B00894B8C /* MapMath.swift */; };
 		FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */; };
-		FA8A7F5F2BA5627100894B8C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F5E2BA5627100894B8C /* Player.swift */; };
-		FA8A7F632BA564D600894B8C /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F622BA564D600894B8C /* MapFactory.swift */; };
 		FA8A7F672BA5653900894B8C /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A7F662BA5653900894B8C /* ASKCore */; };
-		FA8A7F692BA5653F00894B8C /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F682BA5653F00894B8C /* IOC.swift */; };
-		FA8A7F6C2BA5684800894B8C /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F6B2BA5684800894B8C /* LevelModel.swift */; };
-		FA8A7F6F2BA568F700894B8C /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F6E2BA568F700894B8C /* LevelFactory.swift */; };
-		FA8A7F722BA5839400894B8C /* MapPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F712BA5839400894B8C /* MapPath.swift */; };
-		FA8A7F742BA583B100894B8C /* PathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F732BA583B100894B8C /* PathFinder.swift */; };
-		FA8A7F772BA5936500894B8C /* AStar in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A7F762BA5936500894B8C /* AStar */; };
-		FA8A7F7B2BA595FD00894B8C /* PathFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,17 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA4447692BB3F20C009ABE7F /* Damagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damagable.swift; sourceTree = "<group>"; };
-		FA44476D2BB3F2B8009ABE7F /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
-		FA44476F2BB3F325009ABE7F /* SkillValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillValues.swift; sourceTree = "<group>"; };
-		FA4447712BB3F42C009ABE7F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		FA4447732BB3F58D009ABE7F /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
-		FA4447762BB3F6EE009ABE7F /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
-		FA4447792BB3F788009ABE7F /* AbilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityService.swift; sourceTree = "<group>"; };
-		FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityUseResult.swift; sourceTree = "<group>"; };
-		FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityServiceTests.swift; sourceTree = "<group>"; };
-		FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmediateEffect.swift; sourceTree = "<group>"; };
-		FA4447842BB3FD77009ABE7F /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		FA2150FA2BB8D40C00570EF4 /* CoreLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreLibrary; sourceTree = "<group>"; };
 		FA8A7F0D2B9EF2D600894B8C /* Infinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8A7F202B9EFA6200894B8C /* InfinityApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfinityApp.swift; sourceTree = "<group>"; };
 		FA8A7F212B9EFA6200894B8C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,27 +41,13 @@
 		FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		FA8A7F2B2B9F0C8800894B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8A7F2D2B9F0C8800894B8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA8A7F312B9F0E2F00894B8C /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
-		FA8A7F332B9F0E4500894B8C /* MapSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSquare.swift; sourceTree = "<group>"; };
 		FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunkCanvas.swift; sourceTree = "<group>"; };
-		FA8A7F392BA18B6400894B8C /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunkView.swift; sourceTree = "<group>"; };
-		FA8A7F3D2BA1904400894B8C /* MapChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapChunk.swift; sourceTree = "<group>"; };
 		FA8A7F402BA1AD5000894B8C /* properhitboxglobal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = properhitboxglobal.otf; sourceTree = "<group>"; };
 		FA8A7F432BA1AE6800894B8C /* Bundle+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Font.swift"; sourceTree = "<group>"; };
-		FA8A7F462BA522FE00894B8C /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
 		FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleChunksView.swift; sourceTree = "<group>"; };
-		FA8A7F4B2BA5338B00894B8C /* MapMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMath.swift; sourceTree = "<group>"; };
 		FA8A7F512BA5445A00894B8C /* InfinityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMathTests.swift; sourceTree = "<group>"; };
-		FA8A7F5E2BA5627100894B8C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		FA8A7F622BA564D600894B8C /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
-		FA8A7F682BA5653F00894B8C /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
-		FA8A7F6B2BA5684800894B8C /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
-		FA8A7F6E2BA568F700894B8C /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
-		FA8A7F712BA5839400894B8C /* MapPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPath.swift; sourceTree = "<group>"; };
-		FA8A7F732BA583B100894B8C /* PathFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFinder.swift; sourceTree = "<group>"; };
-		FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFinderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8A7F772BA5936500894B8C /* AStar in Frameworks */,
 				FA8A7F672BA5653900894B8C /* ASKCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,76 +69,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA4447672BB3F14A009ABE7F /* Combat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Combat;
-			sourceTree = "<group>";
-		};
-		FA4447682BB3F19E009ABE7F /* Combat */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447692BB3F20C009ABE7F /* Damagable.swift */,
-			);
-			path = Combat;
-			sourceTree = "<group>";
-		};
-		FA44476B2BB3F287009ABE7F /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447712BB3F42C009ABE7F /* Entity.swift */,
-				FA4447732BB3F58D009ABE7F /* Health.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		FA44476C2BB3F2B2009ABE7F /* Skill */ = {
-			isa = PBXGroup;
-			children = (
-				FA44476D2BB3F2B8009ABE7F /* Skill.swift */,
-				FA44476F2BB3F325009ABE7F /* SkillValues.swift */,
-			);
-			path = Skill;
-			sourceTree = "<group>";
-		};
-		FA4447752BB3F6E8009ABE7F /* Ability */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447762BB3F6EE009ABE7F /* Ability.swift */,
-				FA44477B2BB3F7EB009ABE7F /* AbilityUseResult.swift */,
-			);
-			path = Ability;
-			sourceTree = "<group>";
-		};
-		FA4447782BB3F77A009ABE7F /* Ability */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447792BB3F788009ABE7F /* AbilityService.swift */,
-			);
-			path = Ability;
-			sourceTree = "<group>";
-		};
-		FA44477D2BB3F8C0009ABE7F /* Ability */ = {
-			isa = PBXGroup;
-			children = (
-				FA44477E2BB3F8C7009ABE7F /* AbilityServiceTests.swift */,
-			);
-			path = Ability;
-			sourceTree = "<group>";
-		};
-		FA4447812BB3FCE4009ABE7F /* Effect */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447822BB3FD3F009ABE7F /* ImmediateEffect.swift */,
-				FA4447842BB3FD77009ABE7F /* Effect.swift */,
-			);
-			path = Effect;
-			sourceTree = "<group>";
-		};
 		FA8A7F042B9EF2D600894B8C = {
 			isa = PBXGroup;
 			children = (
+				FA2150FA2BB8D40C00570EF4 /* CoreLibrary */,
 				FA8A7F0F2B9EF2D600894B8C /* Infinity */,
 				FA8A7F522BA5445A00894B8C /* InfinityTests */,
 				FA8A7F0E2B9EF2D600894B8C /* Products */,
@@ -208,11 +91,8 @@
 		FA8A7F0F2B9EF2D600894B8C /* Infinity */ = {
 			isa = PBXGroup;
 			children = (
-				FA8A7F602BA564BE00894B8C /* Service */,
-				FA8A7F4A2BA5337E00894B8C /* Math */,
 				FA8A7F422BA1AE5700894B8C /* Util */,
 				FA8A7F2A2B9F0C8800894B8C /* Resource */,
-				FA8A7F292B9F0C6A00894B8C /* Model */,
 				FA8A7F1E2B9EFA6200894B8C /* Scene */,
 			);
 			path = Infinity;
@@ -242,27 +122,10 @@
 				FA8A7F252B9EFA6D00894B8C /* MapView.swift */,
 				FA8A7F272B9EFB5000894B8C /* MapViewModel.swift */,
 				FA8A7F372B9F0F9200894B8C /* MapChunkCanvas.swift */,
-				FA8A7F392BA18B6400894B8C /* MapConstants.swift */,
 				FA8A7F3B2BA18FCA00894B8C /* MapChunkView.swift */,
 				FA8A7F482BA5271200894B8C /* VisibleChunksView.swift */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		FA8A7F292B9F0C6A00894B8C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447812BB3FCE4009ABE7F /* Effect */,
-				FA4447752BB3F6E8009ABE7F /* Ability */,
-				FA44476C2BB3F2B2009ABE7F /* Skill */,
-				FA44476B2BB3F287009ABE7F /* Entity */,
-				FA4447682BB3F19E009ABE7F /* Combat */,
-				FA8A7F6A2BA5684300894B8C /* Level */,
-				FA8A7F5D2BA5624800894B8C /* Player */,
-				FA8A7F452BA522F500894B8C /* Util */,
-				FA8A7F302B9F0CD600894B8C /* Map */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FA8A7F2A2B9F0C8800894B8C /* Resource */ = {
@@ -283,17 +146,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FA8A7F302B9F0CD600894B8C /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F702BA5838F00894B8C /* Path */,
-				FA8A7F312B9F0E2F00894B8C /* MapModel.swift */,
-				FA8A7F332B9F0E4500894B8C /* MapSquare.swift */,
-				FA8A7F3D2BA1904400894B8C /* MapChunk.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		FA8A7F3F2BA1AD5000894B8C /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,26 +162,9 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		FA8A7F452BA522F500894B8C /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F462BA522FE00894B8C /* Coord.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		FA8A7F4A2BA5337E00894B8C /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F4B2BA5338B00894B8C /* MapMath.swift */,
-			);
-			path = Math;
-			sourceTree = "<group>";
-		};
 		FA8A7F522BA5445A00894B8C /* InfinityTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA8A7F782BA595F500894B8C /* Service */,
 				FA8A7F5A2BA5446900894B8C /* Math */,
 			);
 			path = InfinityTests;
@@ -341,84 +176,6 @@
 				FA8A7F5B2BA5448700894B8C /* MapMathTests.swift */,
 			);
 			path = Math;
-			sourceTree = "<group>";
-		};
-		FA8A7F5D2BA5624800894B8C /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F5E2BA5627100894B8C /* Player.swift */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
-		FA8A7F602BA564BE00894B8C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				FA4447782BB3F77A009ABE7F /* Ability */,
-				FA4447672BB3F14A009ABE7F /* Combat */,
-				FA8A7F6D2BA568F100894B8C /* Level */,
-				FA8A7F642BA564E500894B8C /* App */,
-				FA8A7F612BA564CE00894B8C /* Map */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		FA8A7F612BA564CE00894B8C /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F622BA564D600894B8C /* MapFactory.swift */,
-				FA8A7F732BA583B100894B8C /* PathFinder.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		FA8A7F642BA564E500894B8C /* App */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F682BA5653F00894B8C /* IOC.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		FA8A7F6A2BA5684300894B8C /* Level */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F6B2BA5684800894B8C /* LevelModel.swift */,
-			);
-			path = Level;
-			sourceTree = "<group>";
-		};
-		FA8A7F6D2BA568F100894B8C /* Level */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F6E2BA568F700894B8C /* LevelFactory.swift */,
-			);
-			path = Level;
-			sourceTree = "<group>";
-		};
-		FA8A7F702BA5838F00894B8C /* Path */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F712BA5839400894B8C /* MapPath.swift */,
-			);
-			path = Path;
-			sourceTree = "<group>";
-		};
-		FA8A7F782BA595F500894B8C /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				FA44477D2BB3F8C0009ABE7F /* Ability */,
-				FA8A7F792BA595F500894B8C /* Map */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		FA8A7F792BA595F500894B8C /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				FA8A7F7A2BA595FD00894B8C /* PathFinderTests.swift */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,7 +196,6 @@
 			name = Infinity;
 			packageProductDependencies = (
 				FA8A7F662BA5653900894B8C /* ASKCore */,
-				FA8A7F762BA5936500894B8C /* AStar */,
 			);
 			productName = Infinity;
 			productReference = FA8A7F0D2B9EF2D600894B8C /* Infinity.app */;
@@ -494,7 +250,7 @@
 			mainGroup = FA8A7F042B9EF2D600894B8C;
 			packageReferences = (
 				FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */,
-				FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */,
+				FA2150FB2BB8D90500570EF4 /* XCLocalSwiftPackageReference "CoreLibrary" */,
 			);
 			productRefGroup = FA8A7F0E2B9EF2D600894B8C /* Products */;
 			projectDirPath = "";
@@ -531,37 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8A7F3E2BA1904400894B8C /* MapChunk.swift in Sources */,
-				FA4447772BB3F6EE009ABE7F /* Ability.swift in Sources */,
-				FA4447722BB3F42C009ABE7F /* Entity.swift in Sources */,
-				FA8A7F632BA564D600894B8C /* MapFactory.swift in Sources */,
-				FA8A7F692BA5653F00894B8C /* IOC.swift in Sources */,
-				FA8A7F3A2BA18B6400894B8C /* MapConstants.swift in Sources */,
-				FA4447852BB3FD77009ABE7F /* Effect.swift in Sources */,
 				FA8A7F232B9EFA6200894B8C /* InfinityApp.swift in Sources */,
 				FA8A7F382B9F0F9200894B8C /* MapChunkCanvas.swift in Sources */,
-				FA4447742BB3F58D009ABE7F /* Health.swift in Sources */,
-				FA8A7F6C2BA5684800894B8C /* LevelModel.swift in Sources */,
-				FA4447832BB3FD3F009ABE7F /* ImmediateEffect.swift in Sources */,
-				FA44477A2BB3F788009ABE7F /* AbilityService.swift in Sources */,
 				FA8A7F3C2BA18FCA00894B8C /* MapChunkView.swift in Sources */,
 				FA8A7F492BA5271200894B8C /* VisibleChunksView.swift in Sources */,
 				FA8A7F442BA1AE6800894B8C /* Bundle+Font.swift in Sources */,
-				FA44477C2BB3F7EB009ABE7F /* AbilityUseResult.swift in Sources */,
-				FA8A7F342B9F0E4500894B8C /* MapSquare.swift in Sources */,
-				FA8A7F722BA5839400894B8C /* MapPath.swift in Sources */,
-				FA44476A2BB3F20C009ABE7F /* Damagable.swift in Sources */,
-				FA8A7F4C2BA5338B00894B8C /* MapMath.swift in Sources */,
-				FA8A7F322B9F0E2F00894B8C /* MapModel.swift in Sources */,
-				FA8A7F742BA583B100894B8C /* PathFinder.swift in Sources */,
 				FA8A7F262B9EFA6D00894B8C /* MapView.swift in Sources */,
-				FA8A7F472BA522FE00894B8C /* Coord.swift in Sources */,
 				FA8A7F242B9EFA6200894B8C /* ContentView.swift in Sources */,
-				FA4447702BB3F325009ABE7F /* SkillValues.swift in Sources */,
-				FA44476E2BB3F2B8009ABE7F /* Skill.swift in Sources */,
-				FA8A7F5F2BA5627100894B8C /* Player.swift in Sources */,
 				FA8A7F282B9EFB5000894B8C /* MapViewModel.swift in Sources */,
-				FA8A7F6F2BA568F700894B8C /* LevelFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,9 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8A7F7B2BA595FD00894B8C /* PathFinderTests.swift in Sources */,
 				FA8A7F5C2BA5448700894B8C /* MapMathTests.swift in Sources */,
-				FA44477F2BB3F8C7009ABE7F /* AbilityServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,6 +565,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		FA2150FB2BB8D90500570EF4 /* XCLocalSwiftPackageReference "CoreLibrary" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CoreLibrary;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -843,14 +581,6 @@
 				kind = branch;
 			};
 		};
-		FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Dev1an/A-Star?tab=readme-ov-file";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -858,11 +588,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA8A7F652BA5653900894B8C /* XCRemoteSwiftPackageReference "ASKCore" */;
 			productName = ASKCore;
-		};
-		FA8A7F762BA5936500894B8C /* AStar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA8A7F752BA5936500894B8C /* XCRemoteSwiftPackageReference "A-Star" */;
-			productName = AStar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

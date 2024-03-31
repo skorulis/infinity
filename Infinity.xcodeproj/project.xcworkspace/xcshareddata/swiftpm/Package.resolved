@@ -1,14 +1,6 @@
 {
+  "originHash" : "996154868e02aad5ae546a63238bcff9113741f3ad8de6ace5f58827de18344f",
   "pins" : [
-    {
-      "identity" : "a-star?tab=readme-ov-file",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Dev1an/A-Star?tab=readme-ov-file",
-      "state" : {
-        "revision" : "d058ecc05f48551b1cc3d4e68f365f655f8febcc",
-        "version" : "2.1.0"
-      }
-    },
     {
       "identity" : "askcore",
       "kind" : "remoteSourceControl",
@@ -37,5 +29,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

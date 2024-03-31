@@ -2,9 +2,11 @@
 
 import Foundation
 
+typealias EntityID = UUID
+
 public struct Entity {
     
-    let id: UUID = .init()
+    let id: EntityID = .init()
     
     var skills: SkillValues = .init()
     var health: Health = .init(current: 50, max: 50)
@@ -13,7 +15,13 @@ public struct Entity {
         switch effect {
         case let .damage(amount):
             health.take(amount: amount)
+        default:
+            break // Do nothing by default    
         }
+    }
+    
+    mutating func updateCalculations() {
+        health.maxValue = healthCalculation
     }
 
 }

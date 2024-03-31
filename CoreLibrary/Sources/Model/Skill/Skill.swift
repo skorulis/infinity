@@ -5,4 +5,9 @@ import Foundation
 enum Skill: String, Equatable, Codable {
     // How much damage an entity can take
     case toughness
+    
+    // Physical strength
+    case strength
+    
+    case dexterity
 }

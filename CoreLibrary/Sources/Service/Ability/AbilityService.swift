@@ -4,6 +4,12 @@ import Foundation
 
 final class AbilityService {
     
+    let random: RandomService
+    
+    init(random: RandomService) {
+        self.random = random
+    }
+    
     func use(ability: Ability, source: Entity, target: Entity) -> AbilityUseResult {
         let effects = self.effects(ability: ability, source: source, target: target)
         
@@ -35,8 +41,15 @@ final class AbilityService {
     }
     
     private func mainHandAttack(source: Entity, target: Entity) -> [Effect] {
-        let damage = ImmediateEffect.damage(10)
-        return [.immediate(target.id, damage)]
+        let hitChance = random.int(from: 0, to: 100) + source.toHitBonus
+        let defence = 50
+        if hitChance < defence {
+            return []
+        }
+        let damageRange = (2...10).move(distance: source.strengthDamageBonus)
+        let damage = random.int(range: damageRange)
+        let damageEffect = ImmediateEffect.damage(damage)
+        return [.immediate(target.id, damageEffect)]
     }
     
 }
