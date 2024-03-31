@@ -45,8 +45,12 @@ public struct Entity {
         self.derived = skills.derivedAttributes + race.derivedAttributes
     }
     
-    var level: Int {
+    public var level: Int {
         return skills.maxLevel
+    }
+    
+    public var name: String {
+        return properName ?? "Lvl \(level) \(race.rawValue)"
     }
 
 }

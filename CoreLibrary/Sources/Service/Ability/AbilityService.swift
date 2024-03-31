@@ -11,7 +11,7 @@ public final class AbilityService {
     }
     
     func use(ability: Ability, source: Entity, target: Entity) -> AbilityUseResult {
-        let effects = self.effects(ability: ability, source: source, target: target)
+        let (effects, events) = self.outcome(ability: ability, source: source, target: target)
         
         var entities = [
             source.id: source,
@@ -27,11 +27,12 @@ public final class AbilityService {
         
         return .init(
             entities: entities,
-            effects: effects
+            effects: effects,
+            events: events
         )
     }
     
-    private func effects(ability: Ability, source: Entity, target: Entity) -> [Effect] {
+    private func outcome(ability: Ability, source: Entity, target: Entity) -> ([Effect], [Event]) {
         switch ability {
         case .mainHandAttack:
             return mainHandAttack(source: source, target: target)
@@ -40,16 +41,16 @@ public final class AbilityService {
         }
     }
     
-    private func mainHandAttack(source: Entity, target: Entity) -> [Effect] {
+    private func mainHandAttack(source: Entity, target: Entity) -> ([Effect], [Event]) {
         let hitChance = random.int(from: 0, to: 100) + source.skills.toHitBonus
         let defence = 50
         if hitChance < defence {
-            return []
+            return ([], [.miss])
         }
         let damageRange = (2...10).move(distance: source.skills.strengthDamageBonus)
         let damage = random.int(range: damageRange)
         let damageEffect = ImmediateEffect.damage(damage)
-        return [.immediate(target.id, damageEffect)]
+        return ([.immediate(target.id, damageEffect)], [.hit(damage)])
     }
     
 }

@@ -16,12 +16,12 @@ final class CombatSimulationViewModel: ObservableObject {
 extension CombatSimulationViewModel {
     
     func simulate() {
-        let e1 = Entity(skills: .init(levels: [.dexterity: 5]))
-        let e2 = Entity()
+        let e1 = Entity(race: .human, skills: .init(levels: [.dexterity: 5]))
+        let e2 = Entity(race: .rat)
         
         let result = simulationService.simulate(entities: [e1, e2], runs: 1000)
         
-        print("E1 wins: \(result.wins(id: e1.id))")
-        print("E2 wins: \(result.wins(id: e2.id))")
+        result.printResult(id: e1.id)
+        result.printResult(id: e2.id)
     }
 }
