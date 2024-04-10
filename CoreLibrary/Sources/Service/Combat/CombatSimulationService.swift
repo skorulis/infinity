@@ -5,26 +5,31 @@ import Foundation
 public final class CombatSimulationService {
     
     private let abilityService: AbilityService
+    private let random: RandomService
     
-    public init(abilityService: AbilityService) {
+    public init(abilityService: AbilityService, random: RandomService) {
         self.abilityService = abilityService
+        self.random = random
     }
     
-    public func simulate(entities: [Entity], runs: Int) -> SimulationResult {
+    public func simulate(config: SimulationConfig) -> SimulationResult {
         var results: [SingleSimulationResult] = []
-        for _ in 0..<runs {
-            for first in 0..<entities.count {
-                for second in 0..<entities.count {
+        for _ in 0..<config.runs {
+            for first in 0..<config.entities.count {
+                for second in 0..<config.entities.count {
                     if first != second {
-                        let result = simulate(entity1: entities[first], entity2: entities[second])
+                        let result = simulate(
+                            entity1: config.entities[first],
+                            entity2: config.entities[second]
+                        )
                         results.append(result)
                     }
                 }
             }
         }
-        let entityMap = Dictionary(grouping: entities, by: {$0.id}).mapValues { $0[0]}
+        let entityMap = Dictionary(grouping: config.entities, by: {$0.id}).mapValues { $0[0]}
         
-        return .init(entities: entityMap, runs: results)
+        return .init(entities: entityMap, runs: results, config: config)
     }
     
     public func simulate(entity1: Entity, entity2: Entity) -> SingleSimulationResult{
@@ -39,20 +44,12 @@ public final class CombatSimulationService {
         }
         
         while !hasFinished() {
-            let e1Result = abilityService.use(
-                ability: .mainHandAttack,
-                source: entities[entity1.id]!,
-                target: entities[entity2.id]!
-            )
+            let e1Result = attack(source: entities[entity1.id]!, target: entities[entity2.id]!)
             logStats(result: e1Result, stats: &e1Stats)
             
             entities = e1Result.entities
             if hasFinished() { continue }
-            let e2Result = abilityService.use(
-                ability: .mainHandAttack,
-                source: entities[entity2.id]!,
-                target: entities[entity1.id]!
-            )
+            let e2Result = attack(source: entities[entity2.id]!, target: entities[entity1.id]!)
             
             logStats(result: e2Result, stats: &e2Stats)
             
@@ -70,8 +67,25 @@ public final class CombatSimulationService {
         )
     }
     
+    private func attack(source: Entity, target: Entity) -> AbilityUseResult{
+        let ability = pickAbility(entity: source)
+        return abilityService.use(
+            ability: ability,
+            source: source,
+            target: target
+        )
+        
+    }
+    
+    private func pickAbility(entity: Entity) -> Ability {
+        let index = random.int(range: 0...entity.abilities.count-1)
+        let ability = entity.abilities[index]
+        return ability
+    }
+    
     private func logStats(result: AbilityUseResult, stats: inout EntityStats) {
         stats.attacks += 1
+        stats.abilities.append(result)
         for event in result.events {
             switch event {
             case .miss:
@@ -97,15 +111,29 @@ public extension CombatSimulationService {
         }
     }
     
+    struct SimulationConfig {
+        public let entities: [Entity]
+        public let runs: Int
+        public let printAllLogs: Bool
+        
+        public init(entities: [Entity], runs: Int, printAllLogs: Bool = false ) {
+            self.entities = entities
+            self.runs = runs
+            self.printAllLogs = printAllLogs
+        }
+    }
+    
     struct EntityStats {
-        var attacks: Int = 0
-        var misses: Int = 0
-        var damage: Int = 0
+        public var abilities: [AbilityUseResult] = []
+        public var attacks: Int = 0
+        public var misses: Int = 0
+        public var damage: Int = 0
     }
     
     struct SimulationResult {
-        let entities: [EntityID: Entity]
-        let runs: [SingleSimulationResult]
+        public let entities: [EntityID: Entity]
+        public let runs: [SingleSimulationResult]
+        public let config: SimulationConfig
         
         public func wins(id: EntityID) -> Int {
             return runs.filter { $0.winner?.id == id }.count

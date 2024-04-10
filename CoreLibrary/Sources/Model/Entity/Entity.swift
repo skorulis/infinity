@@ -11,13 +11,22 @@ public struct Entity {
     
     public let race: Race
     public var skills: SkillValues
+    public var abilities: [Ability]
+    public var biology: [BodyPart: BodyPartDefinition]
     public private(set) var derived: DerivedAttributeValues = .init(values: [:])
     
     public var health: Int = 0
     
-    public init(race: Race, skills: SkillValues = .init()) {
+    public init(
+        race: Race,
+        skills: SkillValues = .init(),
+        biology: [BodyPart: BodyPartDefinition],
+        abilities: [Ability]
+    ) {
         self.race = race
         self.skills = skills
+        self.biology = biology
+        self.abilities = abilities
         
         self.reset()
     }

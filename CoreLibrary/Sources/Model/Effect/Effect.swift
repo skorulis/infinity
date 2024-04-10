@@ -2,6 +2,6 @@
 
 import Foundation
 
-enum Effect {
+public enum Effect {
     case immediate(UUID, ImmediateEffect)
 }

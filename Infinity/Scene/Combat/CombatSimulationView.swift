@@ -16,6 +16,7 @@ extension CombatSimulationView: View {
     var body: some View {
         VStack {
             Button("Simulate", action: viewModel.simulate)
+            Button("Simulate x 1000", action: viewModel.simulate1000)
         }
     }
 }

@@ -2,7 +2,8 @@
 
 import Foundation
 
-public enum Ability: String, Equatable, Codable {
+public enum Ability: Equatable, Codable {
     case mainHandAttack
     case secondHandAttack
+    case unarmed(BodyPart)
 }

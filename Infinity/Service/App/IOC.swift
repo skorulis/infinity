@@ -23,6 +23,7 @@ public final class IOC: IOCService {
         container.autoregister(CombatSimulationService.self, initializer: CombatSimulationService.init)
         
         container.autoregister(RandomService.self, initializer: DefaultRandomService.init)
+        container.autoregister(EntityFactory.self, initializer: EntityFactory.init)
     }
     
     private func registerViewModels() {

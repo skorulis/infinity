@@ -26,6 +26,7 @@ public final class AbilityService {
         }
         
         return .init(
+            ability: ability,
             entities: entities,
             effects: effects,
             events: events
@@ -38,6 +39,8 @@ public final class AbilityService {
             return mainHandAttack(source: source, target: target)
         case .secondHandAttack:
             fatalError("TODO")
+        case let .unarmed(bodyPart):
+            return unarmedAttack(source: source, target: target, bodyPart: bodyPart)
         }
     }
     
@@ -48,6 +51,23 @@ public final class AbilityService {
             return ([], [.miss])
         }
         let damageRange = (2...10).move(distance: source.skills.strengthDamageBonus)
+        let damage = random.int(range: damageRange)
+        let damageEffect = ImmediateEffect.damage(damage)
+        return ([.immediate(target.id, damageEffect)], [.hit(damage)])
+    }
+    
+    private func unarmedAttack(
+        source: Entity,
+        target :Entity,
+        bodyPart: BodyPart
+    ) -> ([Effect], [Event]) {
+        let def = source.biology[bodyPart]!
+        let hitChance = random.int(from: 0, to: 100) + source.skills.toHitBonus
+        let defence = 50
+        if hitChance < defence {
+            return ([], [.miss])
+        }
+        let damageRange = def.damage!.move(distance: source.skills.strengthDamageBonus)
         let damage = random.int(range: damageRange)
         let damageEffect = ImmediateEffect.damage(damage)
         return ([.immediate(target.id, damageEffect)], [.hit(damage)])

@@ -2,13 +2,14 @@
 
 import Foundation
 
-struct AbilityUseResult {
+public struct AbilityUseResult {
     
-    let entities: [UUID: Entity]
-    let effects: [Effect]
-    let events: [Event]
+    public let ability: Ability
+    public let entities: [UUID: Entity]
+    public let effects: [Effect]
+    public let events: [Event]
     
-    func entity(id: UUID) -> Entity {
+    public func entity(id: UUID) -> Entity {
         return entities[id]!
     }
 }
