@@ -19,7 +19,7 @@ extension CombatSimulationViewModel {
     
     func simulate() {
         let e1 = entityFactory.human
-        let e2 = entityFactory.rat
+        let e2 = entityFactory.rat()
         
         let config = CombatSimulationService.SimulationConfig(
             entities: [e1, e2],
@@ -32,7 +32,7 @@ extension CombatSimulationViewModel {
     
     func simulate1000() {
         let e1 = entityFactory.human
-        let e2 = entityFactory.rat
+        let e2 = entityFactory.rat()
         
         let config = CombatSimulationService.SimulationConfig(
             entities: [e1, e2],

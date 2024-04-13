@@ -5,4 +5,6 @@ import Foundation
 struct WeaponInfo {
     
     let damage: ClosedRange<Int>
+    let hitBonuses: [Skill: Float]
+    let damageBonus: [Skill: Float]
 }

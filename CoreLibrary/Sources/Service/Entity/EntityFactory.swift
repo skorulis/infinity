@@ -16,8 +16,8 @@ public final class EntityFactory {
             raceModifiers: modifiers,
             skills: .init(),
             biology: [
-                .claws: .init(weapon: .init(damage: 2...5)),
-                .teeth: .init(weapon: .init(damage: 6...7))
+                .claws: bodyPartFactory.animalClaws(damage: 1...3),
+                .teeth: bodyPartFactory.animalTeeth(damage: 2...5),
             ],
             abilities: [
                 .unarmed(.teeth),

@@ -36,7 +36,7 @@ public final class AbilityService {
     private func outcome(ability: Ability, source: Entity, target: Entity) -> ([Effect], [Event]) {
         switch ability {
         case .mainHandAttack:
-            return mainHandAttack(source: source, target: target)
+            fatalError("TODO")
         case .secondHandAttack:
             fatalError("TODO")
         case let .unarmed(bodyPart):
@@ -44,33 +44,34 @@ public final class AbilityService {
         }
     }
     
-    private func mainHandAttack(source: Entity, target: Entity) -> ([Effect], [Event]) {
-        let hitChance = random.int(from: 0, to: 100) + source.skills.toHitBonus
+    private func unarmedAttack(
+        source: Entity,
+        target: Entity,
+        bodyPart: BodyPart
+    ) -> ([Effect], [Event]) {
+        let def = source.biology[bodyPart]!
+        let weapon = def.weapon!
+        let hitBonus = self.hitBonus(source: source, weapon: weapon)
+        let hitChance = random.int(from: 0, to: 100) + hitBonus
         let defence = 50
         if hitChance < defence {
             return ([], [.miss])
         }
-        let damageRange = (2...10).move(distance: source.skills.strengthDamageBonus)
-        let damage = random.int(range: damageRange)
+        let damage = random.int(range: weapon.damage) + damageBonus(source: source, weapon: weapon)
         let damageEffect = ImmediateEffect.damage(damage)
         return ([.immediate(target.id, damageEffect)], [.hit(damage)])
     }
     
-    private func unarmedAttack(
-        source: Entity,
-        target :Entity,
-        bodyPart: BodyPart
-    ) -> ([Effect], [Event]) {
-        let def = source.biology[bodyPart]!
-        let hitChance = random.int(from: 0, to: 100) + source.skills.toHitBonus
-        let defence = 50
-        if hitChance < defence {
-            return ([], [.miss])
+    func hitBonus(source: Entity, weapon: WeaponInfo) -> Int {
+        return weapon.hitBonuses.reduce(0) { partialResult, vk in
+            return partialResult + Int(Float(source.skills[vk.key]) * vk.value)
         }
-        let damageRange = def.weapon!.damage.move(distance: source.skills.strengthDamageBonus)
-        let damage = random.int(range: damageRange)
-        let damageEffect = ImmediateEffect.damage(damage)
-        return ([.immediate(target.id, damageEffect)], [.hit(damage)])
+    }
+    
+    func damageBonus(source: Entity, weapon: WeaponInfo) -> Int {
+        return weapon.damageBonus.reduce(0) { partialResult, vk in
+            return partialResult + Int(Float(source.skills[vk.key]) * vk.value)
+        }
     }
     
 }
