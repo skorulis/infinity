@@ -20,7 +20,8 @@ extension Race {
             return .init(
                 values: [
                     .baseHitPoints: .add(-10),
-                    .hitPointGain: .add(-4)
+                    .hitPointGain: .add(-4),
+                    .xpGainMultiplier: .multiply(0.5)
                 ]
             )
         }

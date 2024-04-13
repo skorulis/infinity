@@ -31,30 +31,24 @@ final class AbilityServiceTests: XCTestCase {
     func test_hitBonus() {
         var entity = entityFactory.human
         let weapon = entity.biology[.hands]?.weapon
-        XCTAssertEqual(
-            service.hitBonus(source: entity, weapon: weapon!),
-            2
-        )
+        let bonus1 = service.hitBonus(source: entity, weapon: weapon!)
+        XCTAssertEqual(bonus1.value, 2)
+        XCTAssertEqual(bonus1.usedSkills, .init(values: [.dexterity: 1, .strength: 1]))
         entity.skills.set(skill: .dexterity, level: 5)
-        XCTAssertEqual(
-            service.hitBonus(source: entity, weapon: weapon!),
-            6
-        )
+        let bonus2 = service.hitBonus(source: entity, weapon: weapon!)
+        XCTAssertEqual(bonus2.value, 6)
+        XCTAssertEqual(bonus2.usedSkills, .init(values: [.dexterity: 1, .strength: 1]))
     }
     
     func test_damageBonus() {
         var entity = entityFactory.human
         let weapon = entity.biology[.hands]?.weapon
-        XCTAssertEqual(
-            service.damageBonus(source: entity, weapon: weapon!),
-            0
-        )
+        let bonus1 = service.damageBonus(source: entity, weapon: weapon!)
+        XCTAssertEqual(bonus1.value, 0)
         entity.skills.set(skill: .dexterity, level: 5)
         entity.skills.set(skill: .strength, level: 5)
-        XCTAssertEqual(
-            service.damageBonus(source: entity, weapon: weapon!),
-            2
-        )
+        let bonus2 = service.damageBonus(source: entity, weapon: weapon!)
+        XCTAssertEqual(bonus2.value, 2)
     }
     
 }

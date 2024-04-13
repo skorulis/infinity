@@ -13,3 +13,15 @@ public struct AbilityUseResult {
         return entities[id]!
     }
 }
+
+public struct AbilityResult {
+    let effects: [Effect]
+    let events: [Event]
+    let skillUse: SkillUse
+    
+    init(effects: [Effect], events: [Event], skillUse: SkillUse) {
+        self.effects = effects
+        self.events = events
+        self.skillUse = skillUse
+    }
+}

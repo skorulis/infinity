@@ -25,6 +25,7 @@ public final class IOC: IOCService {
         container.autoregister(RandomService.self, initializer: DefaultRandomService.init)
         container.autoregister(EntityFactory.self, initializer: EntityFactory.init)
         container.autoregister(BodyPartFactory.self, initializer: BodyPartFactory.init)
+        container.autoregister(ExperienceService.self, initializer: ExperienceService.init)
     }
     
     private func registerViewModels() {

@@ -32,7 +32,7 @@ public final class CombatSimulationService {
         return .init(entities: entityMap, runs: results, config: config)
     }
     
-    public func simulate(entity1: Entity, entity2: Entity) -> SingleSimulationResult{
+    public func simulate(entity1: Entity, entity2: Entity) -> SingleSimulationResult {
         var entities = [
             entity1.id: entity1,
             entity2.id: entity2

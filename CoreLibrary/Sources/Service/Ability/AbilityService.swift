@@ -11,14 +11,14 @@ public final class AbilityService {
     }
     
     func use(ability: Ability, source: Entity, target: Entity) -> AbilityUseResult {
-        let (effects, events) = self.outcome(ability: ability, source: source, target: target)
+        let result = self.outcome(ability: ability, source: source, target: target)
         
         var entities = [
             source.id: source,
             target.id: target
         ]
         
-        for effect in effects {
+        for effect in result.effects {
             switch effect {
             case let .immediate(uuid, immediateEffect):
                 entities[uuid]?.apply(effect: immediateEffect)
@@ -28,12 +28,12 @@ public final class AbilityService {
         return .init(
             ability: ability,
             entities: entities,
-            effects: effects,
-            events: events
+            effects: result.effects,
+            events: result.events
         )
     }
     
-    private func outcome(ability: Ability, source: Entity, target: Entity) -> ([Effect], [Event]) {
+    private func outcome(ability: Ability, source: Entity, target: Entity) -> AbilityResult {
         switch ability {
         case .mainHandAttack:
             fatalError("TODO")
@@ -48,30 +48,46 @@ public final class AbilityService {
         source: Entity,
         target: Entity,
         bodyPart: BodyPart
-    ) -> ([Effect], [Event]) {
+    ) -> AbilityResult {
+        var skillUse = SkillUse()
         let def = source.biology[bodyPart]!
         let weapon = def.weapon!
         let hitBonus = self.hitBonus(source: source, weapon: weapon)
-        let hitChance = random.int(from: 0, to: 100) + hitBonus
+        let hitChance = random.int(from: 0, to: 100) + hitBonus.value
+        skillUse += hitBonus.usedSkills
         let defence = 50
         if hitChance < defence {
-            return ([], [.miss])
+            return .init(effects: [], events: [.miss], skillUse: skillUse)
         }
-        let damage = random.int(range: weapon.damage) + damageBonus(source: source, weapon: weapon)
+        let damageBonus = damageBonus(source: source, weapon: weapon)
+        skillUse += damageBonus.usedSkills
+        let damage = random.int(range: weapon.damage) + damageBonus.value
         let damageEffect = ImmediateEffect.damage(damage)
-        return ([.immediate(target.id, damageEffect)], [.hit(damage)])
+        return .init(
+            effects: [.immediate(target.id, damageEffect)],
+            events: [.hit(damage)],
+            skillUse: skillUse
+        )
     }
     
-    func hitBonus(source: Entity, weapon: WeaponInfo) -> Int {
-        return weapon.hitBonuses.reduce(0) { partialResult, vk in
-            return partialResult + Int(Float(source.skills[vk.key]) * vk.value)
+    func hitBonus(source: Entity, weapon: WeaponInfo) -> (value: Int, usedSkills: SkillUse) {
+        var result: Int = 0
+        var skillUse = SkillUse()
+        for (key, value) in weapon.hitBonuses {
+            result += Int(Float(source.skills[key]) * value)
+            skillUse.add(skill: key, amount: value)
         }
+        return (result, skillUse)
     }
     
-    func damageBonus(source: Entity, weapon: WeaponInfo) -> Int {
-        return weapon.damageBonus.reduce(0) { partialResult, vk in
-            return partialResult + Int(Float(source.skills[vk.key]) * vk.value)
+    func damageBonus(source: Entity, weapon: WeaponInfo) -> (value: Int, usedSkills: SkillUse) {
+        var result: Int = 0
+        var skillUse = SkillUse()
+        for (key, value) in weapon.damageBonus {
+            result += Int(Float(source.skills[key]) * value)
+            skillUse.add(skill: key, amount: value)
         }
+        return (result, skillUse)
     }
     
 }
