@@ -7,7 +7,7 @@ final class AbilityServiceTests: XCTestCase {
     
     private let random = FakeRandomService()
     private lazy var service = AbilityService(random: random)
-    private let entityFactory = EntityFactory()
+    private let entityFactory = EntityFactory(bodyPartFactory: .init())
     
     private lazy var entity1 = entityFactory.human
     private lazy var entity2 = entityFactory.human

@@ -5,7 +5,7 @@ import XCTest
 
 final class AttributesFormulasTests: XCTestCase {
     
-    private let entityFactory = EntityFactory()
+    private let entityFactory = EntityFactory(bodyPartFactory: .init())
     
     func testDefaultHealth() {
         let skills = SkillValues(levels: [:])

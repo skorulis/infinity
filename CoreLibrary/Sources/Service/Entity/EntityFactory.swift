@@ -4,7 +4,11 @@ import Foundation
 
 public final class EntityFactory {
     
-    public init() {}
+    private let bodyPartFactory: BodyPartFactory
+    
+    public init(bodyPartFactory: BodyPartFactory) {
+        self.bodyPartFactory = bodyPartFactory
+    }
     
     public func rat(_ modifiers: [RaceModifier] = []) -> Entity {
         return .init(
@@ -27,7 +31,7 @@ public final class EntityFactory {
             race: .human,
             skills: .init(),
             biology: [
-                .hands: .init(weapon: .init(damage: 1...4))
+                .hands: bodyPartFactory.humanoidHands(damage: 1...4)
             ],
             abilities: [
                 .unarmed(.hands)

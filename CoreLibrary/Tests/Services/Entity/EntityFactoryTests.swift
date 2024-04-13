@@ -5,10 +5,10 @@ import XCTest
 
 final class EntityFactoryTests: XCTestCase {
     
-    private let factory = EntityFactory()
+    private let entityFactory = EntityFactory(bodyPartFactory: .init())
     
     func testHumanCreation() {
-        let human = factory.human
+        let human = entityFactory.human
         
         XCTAssertEqual(human.health, 20)
     }
