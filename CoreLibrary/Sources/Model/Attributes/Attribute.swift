@@ -2,7 +2,7 @@
 
 import Foundation
 
-public enum Attribute {
+public enum Attribute: CaseIterable {
     
     /// Hit points at level 1 constitution
     case baseHitPoints
@@ -10,42 +10,50 @@ public enum Attribute {
     /// Hit points gained per level
     case hitPointGain
     
-    var `default`: Int {
+    var `default`: ModificationValue {
         switch self {
         case .baseHitPoints:
-            return 20
+            return .add(20)
         case .hitPointGain:
-            return 5
+            return .add(5)
         }
     }
 }
 
 public struct AttributeValues {
     
-    let values: [Attribute: Int]
+    let values: [Attribute: ModificationValue]
     
-    public init(values: [Attribute : Int]) {
+    public init(values: [Attribute : ModificationValue]) {
         self.values = values
     }
     
-    public func value(_ attribute: Attribute) -> Int? {
+    public func value(_ attribute: Attribute) -> ModificationValue? {
         return values[attribute]
     }
     
-    public func valueWithDefault(_ attribute: Attribute) -> Int {
+    public func valueWithDefault(_ attribute: Attribute) -> ModificationValue {
         values[attribute] ?? attribute.default
     }
     
     static func +(lhs: AttributeValues, rhs: AttributeValues) -> AttributeValues {
         var mutableValues = lhs.values
         for (key, value) in rhs.values {
-            mutableValues[key] = (mutableValues[key] ?? 0) + value
+            mutableValues[key] = (mutableValues[key] ?? key.default) + value
         }
         
         return .init(values: mutableValues)
     }
     
-    subscript(attribute: Attribute) -> Int {
+    subscript(attribute: Attribute) -> ModificationValue {
         return valueWithDefault(attribute)
     }
+    
+    public static let `default`: AttributeValues = {
+        var dict = [Attribute: ModificationValue]()
+        for att in Attribute.allCases {
+            dict[att] = att.default
+        }
+        return .init(values: dict)
+    }()
 }

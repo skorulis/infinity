@@ -6,9 +6,10 @@ public final class EntityFactory {
     
     public init() {}
     
-    public var rat: Entity {
+    public func rat(_ modifiers: [RaceModifier] = []) -> Entity {
         return .init(
             race: .rat,
+            raceModifiers: modifiers,
             skills: .init(),
             biology: [
                 .claws: .init(damage: 2...5),

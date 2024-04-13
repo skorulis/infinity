@@ -10,7 +10,12 @@ public struct Entity {
     private var properName: String?
     
     public let race: Race
-    public var skills: SkillValues
+    public let raceModifiers: [RaceModifier]
+    public var skills: SkillValues {
+        didSet {
+            self.calulateDerivedValues()
+        }
+    }
     public var abilities: [Ability]
     public var biology: [BodyPart: BodyPartDefinition]
     public private(set) var derived: DerivedAttributeValues = .init(values: [:])
@@ -19,11 +24,13 @@ public struct Entity {
     
     public init(
         race: Race,
+        raceModifiers: [RaceModifier] = [],
         skills: SkillValues = .init(),
         biology: [BodyPart: BodyPartDefinition],
         abilities: [Ability]
     ) {
         self.race = race
+        self.raceModifiers = raceModifiers
         self.skills = skills
         self.biology = biology
         self.abilities = abilities
@@ -51,8 +58,12 @@ public struct Entity {
     }
     
     mutating func calulateDerivedValues() {
+        var combinedAtts = attributes + .default
+        for raceModifier in raceModifiers {
+            combinedAtts = combinedAtts + raceModifier.attributes
+        }
         self.derived = AttributeFormulas.derivedAttributes(
-            attributes: attributes,
+            attributes: combinedAtts,
             skills: skills
         )
     }

@@ -5,8 +5,8 @@ import Foundation
 public enum AttributeFormulas {
     
     public static func hitpoints(attributes: AttributeValues, skills: SkillValues) -> Int {
-        var base = attributes.valueWithDefault(.baseHitPoints)
-        base += attributes.valueWithDefault(.hitPointGain) * (skills[.toughness] - 1)
+        var base = attributes.valueWithDefault(.baseHitPoints).value
+        base += attributes.valueWithDefault(.hitPointGain).value * (skills[.toughness] - 1)
         return base
     }
     

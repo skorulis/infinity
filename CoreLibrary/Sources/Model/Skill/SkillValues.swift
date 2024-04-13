@@ -20,7 +20,11 @@ public struct SkillValues {
         }
     }
     
-    subscript(skill: Skill) -> Int {
+    public mutating func set(skill: Skill, level: Int) {
+        self.levels[skill] = level
+    }
+    
+    public subscript(skill: Skill) -> Int {
         return level(skill: skill)
     }
 }

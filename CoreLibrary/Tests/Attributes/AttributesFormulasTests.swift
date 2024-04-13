@@ -15,8 +15,16 @@ final class AttributesFormulasTests: XCTestCase {
     }
     
     func testRatHealth() {
-        let rat = entityFactory.rat
+        var rat = entityFactory.rat()
         XCTAssertEqual(rat.derived[.maxHealth], 10)
-        
+        rat.skills.set(skill: .toughness, level: 2)
+        XCTAssertEqual(rat.derived[.maxHealth], 11)
+    }
+    
+    func testGiantRat() {
+        var rat = entityFactory.rat([.giant])
+        XCTAssertEqual(rat.derived[.maxHealth], 15)
+        rat.skills.set(skill: .toughness, level: 2)
+        XCTAssertEqual(rat.derived[.maxHealth], 17)
     }
 }

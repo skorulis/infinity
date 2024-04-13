@@ -14,16 +14,13 @@ extension Race {
         switch self {
         case .human:
             return .init(
-                values: [
-                    .baseHitPoints: 20,
-                    .hitPointGain: 4
-                ]
+                values: [:]
             )
         case .rat:
             return .init(
                 values: [
-                    .baseHitPoints: 10,
-                    .hitPointGain: 1
+                    .baseHitPoints: .add(-10),
+                    .hitPointGain: .add(-4)
                 ]
             )
         }
