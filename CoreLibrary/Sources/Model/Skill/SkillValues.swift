@@ -19,4 +19,8 @@ public struct SkillValues {
             return max(partialResult, next.value)
         }
     }
+    
+    subscript(skill: Skill) -> Int {
+        return level(skill: skill)
+    }
 }

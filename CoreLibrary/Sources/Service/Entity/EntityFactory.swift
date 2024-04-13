@@ -14,7 +14,10 @@ public final class EntityFactory {
                 .claws: .init(damage: 2...5),
                 .teeth: .init(damage: 6...7)
             ],
-            abilities: [.unarmed(.teeth), .unarmed(.claws)]
+            abilities: [
+                .unarmed(.teeth),
+                .unarmed(.claws)
+            ]
         )
     }
     
@@ -25,7 +28,9 @@ public final class EntityFactory {
             biology: [
                 .hands: .init(damage: 1...4)
             ],
-            abilities: [.unarmed(.hands)]
+            abilities: [
+                .unarmed(.hands)
+            ]
         )
     }
 }

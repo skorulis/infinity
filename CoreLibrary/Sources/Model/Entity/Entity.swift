@@ -51,7 +51,10 @@ public struct Entity {
     }
     
     mutating func calulateDerivedValues() {
-        self.derived = skills.derivedAttributes + race.derivedAttributes
+        self.derived = AttributeFormulas.derivedAttributes(
+            attributes: attributes,
+            skills: skills
+        )
     }
     
     public var level: Int {
@@ -60,6 +63,10 @@ public struct Entity {
     
     public var name: String {
         return properName ?? "Lvl \(level) \(race.rawValue)"
+    }
+    
+    public var attributes: AttributeValues {
+        return race.attributes
     }
 
 }

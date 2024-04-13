@@ -7,9 +7,10 @@ final class AbilityServiceTests: XCTestCase {
     
     private let random = FakeRandomService()
     private lazy var service = AbilityService(random: random)
+    private let entityFactory = EntityFactory()
     
-    private let entity1 = Entity(race: .human)
-    private let entity2 = Entity(race: .human)
+    private lazy var entity1 = entityFactory.human
+    private lazy var entity2 = entityFactory.human
     
     func test_mainAttack() {
         let result = service.use(ability: .mainHandAttack, source: entity1, target: entity2)

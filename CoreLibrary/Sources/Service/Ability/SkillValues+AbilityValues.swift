@@ -12,14 +12,4 @@ extension SkillValues {
     var toHitBonus: Int {
         level(skill: .dexterity)
     }
-    
-    var healthBonus: Int {
-        level(skill: .toughness)
-    }
-    
-    var derivedAttributes: DerivedAttributeValues {
-        return .init(values: [
-            .maxHealth: healthBonus
-        ])
-    }
 }

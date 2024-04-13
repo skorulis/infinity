@@ -10,18 +10,20 @@ public enum Race: String, Codable {
 
 extension Race {
     
-    var derivedAttributes: DerivedAttributeValues {
+    var attributes: AttributeValues {
         switch self {
         case .human:
             return .init(
                 values: [
-                    .maxHealth: 20
+                    .baseHitPoints: 20,
+                    .hitPointGain: 4
                 ]
             )
         case .rat:
             return .init(
                 values: [
-                    .maxHealth: 10
+                    .baseHitPoints: 10,
+                    .hitPointGain: 1
                 ]
             )
         }
