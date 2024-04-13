@@ -18,7 +18,7 @@ final class AbilityServiceTests: XCTestCase {
         XCTAssertEqual(result.events, [.hit(6)])
         
         let e2 = result.entity(id: entity2.id)
-        XCTAssertEqual(e2.health, 15)
+        XCTAssertEqual(e2.health, 14)
     }
     
     func test_mainAttackMiss() {

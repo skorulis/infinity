@@ -19,6 +19,8 @@ public struct ModificationValue: Equatable {
         return self.init(add: 0, multiply: amount)
     }
     
+    public static let identify = ModificationValue(add: 0, multiply: 1)
+    
     public var value: Int {
         return Int(round(Float(add) * multiply))
     }

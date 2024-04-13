@@ -67,7 +67,7 @@ public final class AbilityService {
         if hitChance < defence {
             return ([], [.miss])
         }
-        let damageRange = def.damage!.move(distance: source.skills.strengthDamageBonus)
+        let damageRange = def.weapon!.damage.move(distance: source.skills.strengthDamageBonus)
         let damage = random.int(range: damageRange)
         let damageEffect = ImmediateEffect.damage(damage)
         return ([.immediate(target.id, damageEffect)], [.hit(damage)])

@@ -4,9 +4,9 @@ import Foundation
 
 public struct BodyPartDefinition {
     
-    let damage: ClosedRange<Int>?
+    let weapon: WeaponInfo?
     
-    init(damage: ClosedRange<Int>?) {
-        self.damage = damage
+    init(weapon: WeaponInfo? = nil) {
+        self.weapon = weapon
     }
 }

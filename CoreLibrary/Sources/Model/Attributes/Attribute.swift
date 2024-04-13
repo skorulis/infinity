@@ -39,7 +39,7 @@ public struct AttributeValues {
     static func +(lhs: AttributeValues, rhs: AttributeValues) -> AttributeValues {
         var mutableValues = lhs.values
         for (key, value) in rhs.values {
-            mutableValues[key] = (mutableValues[key] ?? key.default) + value
+            mutableValues[key] = (mutableValues[key] ?? .identify) + value
         }
         
         return .init(values: mutableValues)
