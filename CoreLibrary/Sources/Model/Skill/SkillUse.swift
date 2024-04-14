@@ -18,4 +18,10 @@ struct SkillUse: Equatable {
             left.values[key] = left[key] + value
         }
     }
+    
+    var totalUse: Float {
+        return values.reduce(0) { partialResult, kv in
+            return partialResult + kv.value
+        }
+    }
 }

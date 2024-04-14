@@ -39,48 +39,47 @@ public final class CombatSimulationService {
     }
     
     public func simulate(entity1: Entity, entity2: Entity) -> SingleSimulationResult {
-        var entities = [
-            entity1.id: entity1,
-            entity2.id: entity2
-        ]
+        var entityList = EntityList(entities: [entity1, entity2])
         var e1Stats = EntityStats()
         var e2Stats = EntityStats()
         let hasFinished: () -> Bool = {
-            return entities.values.contains(where: { $0.health <= 0})
+            return entityList.list.contains(where: { $0.health <= 0})
         }
         
         while !hasFinished() {
-            let e1Result = attack(source: entities[entity1.id]!, target: entities[entity2.id]!)
+            let e1Result = attack(source: entityList[entity1.id], target: entityList[entity2.id])
             logStats(result: e1Result, stats: &e1Stats)
             
-            entities = e1Result.entities
+            entityList.update(entities: e1Result.entities)
             if hasFinished() { continue }
-            let e2Result = attack(source: entities[entity2.id]!, target: entities[entity1.id]!)
+            let e2Result = attack(source: entityList[entity2.id], target: entityList[entity1.id])
             
             logStats(result: e2Result, stats: &e2Stats)
             
-            entities = e2Result.entities
+            entityList.update(entities: e2Result.entities)
         }
         
-        let e1Gain = experienceService.experience(for: entity1, from: entities[entity2.id]!)
-        let e2Gain = experienceService.experience(for: entity2, from: entities[entity1.id]!)
+        let e1Gain = experienceService.experience(for: entity1, from: entityList[entity2.id])
+        let e2Gain = experienceService.experience(for: entity2, from: entityList[entity1.id])
+        let e1Experience = ExperienceGain(total: e1Gain, skills: .init())
+        let e2Experience = ExperienceGain(total: e2Gain, skills: .init())
         
         return SingleSimulationResult(
             inputEntity1: entity1,
             inputEntity2: entity2,
-            outputEntities: Array(entities.values),
+            outputEntities: entityList,
             stats: [
                 entity1.id: e1Stats,
                 entity2.id: e2Stats
             ],
             xpGain: [
-                entity1.id: e1Gain,
-                entity2.id: e2Gain
+                entity1.id: e1Experience,
+                entity2.id: e2Experience
             ]
         )
     }
     
-    private func attack(source: Entity, target: Entity) -> AbilityUseResult{
+    private func attack(source: Entity, target: Entity) -> AbilityUseResult {
         let ability = pickAbility(entity: source)
         return abilityService.use(
             ability: ability,
@@ -99,7 +98,7 @@ public final class CombatSimulationService {
     private func logStats(result: AbilityUseResult, stats: inout EntityStats) {
         stats.attacks += 1
         stats.abilities.append(result)
-        for event in result.events {
+        for event in result.result.events {
             switch event {
             case .miss:
                 stats.misses += 1
@@ -116,12 +115,12 @@ public extension CombatSimulationService {
         public let inputEntity1: Entity
         public let inputEntity2: Entity
         
-        public let outputEntities: [Entity]
+        public let outputEntities: EntityList
         public let stats: [EntityID: EntityStats]
-        public let xpGain: [EntityID: Float]
+        public let xpGain: [EntityID: ExperienceGain]
         
         public var winner: Entity? {
-            return outputEntities.first(where: {$0.health > 0})
+            return outputEntities.list.first(where: {$0.health > 0})
         }
     }
     
@@ -155,7 +154,7 @@ public extension CombatSimulationService {
         
         public func xpGain(id: EntityID) -> Float {
             return runs.reduce(0) { partialResult, res in
-                return partialResult + res.xpGain[id]!
+                return partialResult + res.xpGain[id]!.total
             }
         }
         

@@ -6,8 +6,7 @@ public struct AbilityUseResult {
     
     public let ability: Ability
     public let entities: [UUID: Entity]
-    public let effects: [Effect]
-    public let events: [Event]
+    public let result: AbilityResult
     
     public func entity(id: UUID) -> Entity {
         return entities[id]!

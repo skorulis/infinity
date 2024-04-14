@@ -28,8 +28,7 @@ public final class AbilityService {
         return .init(
             ability: ability,
             entities: entities,
-            effects: result.effects,
-            events: result.events
+            result: result
         )
     }
     
