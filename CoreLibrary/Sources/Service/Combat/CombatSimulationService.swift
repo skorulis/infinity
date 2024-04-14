@@ -40,23 +40,27 @@ public final class CombatSimulationService {
     
     public func simulate(entity1: Entity, entity2: Entity) -> SingleSimulationResult {
         var entityList = EntityList(entities: [entity1, entity2])
-        var e1Stats = EntityStats()
-        var e2Stats = EntityStats()
+        var entityStats: [EntityID: EntityStats] = [
+            entity1.id: EntityStats(),
+            entity2.id: EntityStats(),
+        ]
         let hasFinished: () -> Bool = {
             return entityList.list.contains(where: { $0.health <= 0})
         }
         
         while !hasFinished() {
-            let e1Result = attack(source: entityList[entity1.id], target: entityList[entity2.id])
-            logStats(result: e1Result, stats: &e1Stats)
-            
-            entityList.update(entities: e1Result.entities)
-            if hasFinished() { continue }
-            let e2Result = attack(source: entityList[entity2.id], target: entityList[entity1.id])
-            
-            logStats(result: e2Result, stats: &e2Stats)
-            
-            entityList.update(entities: e2Result.entities)
+            if let nextAttacker = nextToAttack(entities: entityList) {
+                let target = entityList.other(id: nextAttacker.id)
+                let result = attack(source: nextAttacker, target: target)
+                var stats = entityStats[nextAttacker.id]!
+                logStats(result: result, stats: &stats)
+                entityStats[nextAttacker.id] = stats
+                entityList.update(entities: result.entities)
+            } else {
+                entityList.forEach { entity in
+                    entity.gatheredSpeed += 10
+                }
+            }
         }
         
         let e1Gain = experienceService.experience(for: entity1, from: entityList[entity2.id])
@@ -68,15 +72,24 @@ public final class CombatSimulationService {
             inputEntity1: entity1,
             inputEntity2: entity2,
             outputEntities: entityList,
-            stats: [
-                entity1.id: e1Stats,
-                entity2.id: e2Stats
-            ],
+            stats: entityStats,
             xpGain: [
                 entity1.id: e1Experience,
                 entity2.id: e2Experience
             ]
         )
+    }
+    
+    private func nextToAttack(entities: EntityList) -> Entity? {
+        var best: Entity?
+        var bestSpeed: Int = 0
+        for entity in entities.list {
+            if entity.gatheredSpeed > bestSpeed && entity.gatheredSpeed >= 10 {
+                best = entity
+                bestSpeed = entity.gatheredSpeed
+            }
+        }
+        return best
     }
     
     private func attack(source: Entity, target: Entity) -> AbilityUseResult {
@@ -86,7 +99,6 @@ public final class CombatSimulationService {
             source: source,
             target: target
         )
-        
     }
     
     private func pickAbility(entity: Entity) -> Ability {
@@ -158,10 +170,14 @@ public extension CombatSimulationService {
             }
         }
         
-        public func hitFraction(id: EntityID) -> Double {
-            let attacks = runs.reduce(0) { partialResult, result in
+        public func attacks(id: EntityID) -> Int {
+            return runs.reduce(0) { partialResult, result in
                 partialResult + result.stats[id]!.attacks
             }
+        }
+        
+        public func hitFraction(id: EntityID) -> Double {
+            let attacks = self.attacks(id: id)
             if attacks == 0 {
                 return 0
             }
@@ -182,6 +198,7 @@ public extension CombatSimulationService {
             }
             let xp = Int(xpGain(id: id))
             print("\(entity.name) wins: \(wins(id: id))")
+            print("Attacks: \(self.attacks(id: id))")
             print("Hit percentage \(hitPercentage)")
             print("Damage: \(damage)")
             print("Experience: \(xp)")

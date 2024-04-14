@@ -21,6 +21,7 @@ public struct Entity {
     public private(set) var derived: DerivedAttributeValues = .init(values: [:])
     
     public var health: Int = 0
+    public var gatheredSpeed: Int = 0
     public var maxHealth: Int { derived[.maxHealth] }
     
     public init(
@@ -43,8 +44,10 @@ public struct Entity {
         switch effect {
         case let .damage(amount):
             take(damage: amount)
-        default:
-            break // Do nothing by default    
+        case let .useSpeed(amount):
+            gatheredSpeed = max(0, gatheredSpeed - amount)
+        case .miss, .hit:
+            break // Do nothing
         }
     }
     

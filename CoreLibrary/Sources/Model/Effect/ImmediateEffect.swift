@@ -6,4 +6,5 @@ public enum ImmediateEffect: Equatable {
     case hit(EntityID)
     case miss(EntityID)
     case damage(_ amount: Int)
+    case useSpeed(_ amount: Int)
 }

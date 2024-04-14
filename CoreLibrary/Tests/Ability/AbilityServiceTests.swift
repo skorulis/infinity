@@ -14,7 +14,7 @@ final class AbilityServiceTests: XCTestCase {
     
     func test_mainAttack() {
         let result = service.use(ability: .unarmed(.hands), source: entity1, target: entity2)
-        XCTAssertEqual(result.effects.count, 1)
+        XCTAssertEqual(result.result.effects.count, 1)
         XCTAssertEqual(result.events, [.hit(2)])
         
         let e2 = result.entity(id: entity2.id)
@@ -24,7 +24,7 @@ final class AbilityServiceTests: XCTestCase {
     func test_mainAttackMiss() {
         random.nextInts = [10]
         let result = service.use(ability: .unarmed(.hands), source: entity1, target: entity2)
-        XCTAssertEqual(result.effects.count, 0)
+        XCTAssertEqual(result.result.effects.count, 0)
         XCTAssertEqual(result.events, [.miss])
     }
     

@@ -18,11 +18,27 @@ public struct EntityList {
         }
     }
     
+    func other(id: EntityID) -> Entity {
+        assert(ids.count == 2, "Other only works with 2 entities")
+        let otherID = ids.first(where: { $0 != id })!
+        return self[otherID]
+    }
+    
     subscript(id: EntityID) -> Entity {
         return dictionary[id]!
     }
     
     mutating func update(entities: [EntityID: Entity]) {
         self.dictionary = entities
+    }
+    
+    mutating func forEach(_ body: (inout Entity) -> Void) {
+        var result: [EntityID: Entity] = [:]
+        dictionary.forEach { key, value in
+            var entity = self[key]
+            body(&entity)
+            result[key] = entity
+        }
+        dictionary = result
     }
 }

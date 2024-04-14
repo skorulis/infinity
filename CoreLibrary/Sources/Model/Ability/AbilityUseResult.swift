@@ -11,6 +11,9 @@ public struct AbilityUseResult {
     public func entity(id: UUID) -> Entity {
         return entities[id]!
     }
+    
+    var events: [Event] { result.events }
+    var skillUse: SkillUse { result.skillUse }
 }
 
 public struct AbilityResult {

@@ -62,8 +62,12 @@ public final class AbilityService {
         skillUse += damageBonus.usedSkills
         let damage = random.int(range: weapon.damage) + damageBonus.value
         let damageEffect = ImmediateEffect.damage(damage)
+        let speedEffect = ImmediateEffect.useSpeed(10)
         return .init(
-            effects: [.immediate(target.id, damageEffect)],
+            effects: [
+                .immediate(target.id, damageEffect),
+                .immediate(source.id, speedEffect)
+            ],
             events: [.hit(damage)],
             skillUse: skillUse
         )
