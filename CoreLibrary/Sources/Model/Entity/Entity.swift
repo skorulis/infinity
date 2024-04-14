@@ -21,6 +21,7 @@ public struct Entity {
     public private(set) var derived: DerivedAttributeValues = .init(values: [:])
     
     public var health: Int = 0
+    public var maxHealth: Int { derived[.maxHealth] }
     
     public init(
         race: Race,
@@ -49,7 +50,7 @@ public struct Entity {
     
     public mutating func reset() {
         calulateDerivedValues()
-        health = derived.value(.maxHealth)
+        health = maxHealth
     }
     
     mutating func take(damage: Int) {
@@ -58,12 +59,8 @@ public struct Entity {
     }
     
     mutating func calulateDerivedValues() {
-        var combinedAtts = attributes + .default
-        for raceModifier in raceModifiers {
-            combinedAtts = combinedAtts + raceModifier.attributes
-        }
         self.derived = AttributeFormulas.derivedAttributes(
-            attributes: combinedAtts,
+            attributes: attributes,
             skills: skills
         )
     }
@@ -77,7 +74,11 @@ public struct Entity {
     }
     
     public var attributes: AttributeValues {
-        return race.attributes
+        var combinedAtts = race.attributes + .default
+        for raceModifier in raceModifiers {
+            combinedAtts = combinedAtts + raceModifier.attributes
+        }
+        return combinedAtts
     }
 
 }

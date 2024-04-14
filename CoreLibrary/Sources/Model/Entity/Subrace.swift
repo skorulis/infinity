@@ -12,7 +12,7 @@ public enum RaceModifier {
                 values: [
                     .baseHitPoints: .multiply(1.5),
                     .hitPointGain: .multiply(1.5),
-                    .xpGainMultiplier: .multiply(1.5),
+                    .xpMultiplier: .multiply(1.5),
                 ]
             )
         }

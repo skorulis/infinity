@@ -22,7 +22,11 @@ public struct ModificationValue: Equatable {
     public static let identify = ModificationValue(add: 0, multiply: 1)
     
     public var value: Int {
-        return Int(round(Float(add) * multiply))
+        return Int(round(floatValue))
+    }
+    
+    public var floatValue: Float {
+        Float(add) * multiply
     }
     
     public static func +(lhs: ModificationValue, rhs: ModificationValue) -> ModificationValue {

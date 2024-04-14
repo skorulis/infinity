@@ -6,10 +6,16 @@ public final class CombatSimulationService {
     
     private let abilityService: AbilityService
     private let random: RandomService
+    private let experienceService: ExperienceService
     
-    public init(abilityService: AbilityService, random: RandomService) {
+    public init(
+        abilityService: AbilityService,
+        random: RandomService,
+        experienceService: ExperienceService
+    ) {
         self.abilityService = abilityService
         self.random = random
+        self.experienceService = experienceService
     }
     
     public func simulate(config: SimulationConfig) -> SimulationResult {
@@ -56,6 +62,9 @@ public final class CombatSimulationService {
             entities = e2Result.entities
         }
         
+        let e1Gain = experienceService.experience(for: entity1, from: entities[entity2.id]!)
+        let e2Gain = experienceService.experience(for: entity2, from: entities[entity1.id]!)
+        
         return SingleSimulationResult(
             inputEntity1: entity1,
             inputEntity2: entity2,
@@ -63,6 +72,10 @@ public final class CombatSimulationService {
             stats: [
                 entity1.id: e1Stats,
                 entity2.id: e2Stats
+            ],
+            xpGain: [
+                entity1.id: e1Gain,
+                entity2.id: e2Gain
             ]
         )
     }
@@ -105,6 +118,7 @@ public extension CombatSimulationService {
         
         public let outputEntities: [Entity]
         public let stats: [EntityID: EntityStats]
+        public let xpGain: [EntityID: Float]
         
         public var winner: Entity? {
             return outputEntities.first(where: {$0.health > 0})
@@ -139,6 +153,12 @@ public extension CombatSimulationService {
             return runs.filter { $0.winner?.id == id }.count
         }
         
+        public func xpGain(id: EntityID) -> Float {
+            return runs.reduce(0) { partialResult, res in
+                return partialResult + res.xpGain[id]!
+            }
+        }
+        
         public func hitFraction(id: EntityID) -> Double {
             let attacks = runs.reduce(0) { partialResult, result in
                 partialResult + result.stats[id]!.attacks
@@ -161,9 +181,11 @@ public extension CombatSimulationService {
             let damage = runs.reduce(0) { partialResult, res in
                 return partialResult + res.stats[id]!.damage
             }
+            let xp = Int(xpGain(id: id))
             print("\(entity.name) wins: \(wins(id: id))")
             print("Hit percentage \(hitPercentage)")
             print("Damage: \(damage)")
+            print("Experience: \(xp)")
         }
     }
 }

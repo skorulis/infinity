@@ -10,8 +10,8 @@ public enum Attribute: CaseIterable {
     /// Hit points gained per level
     case hitPointGain
     
-    /// How much faster the entity gains XP
-    case xpGainMultiplier
+    /// Multiplier for the XP worth of this entity
+    case xpMultiplier
     
     var `default`: ModificationValue {
         switch self {
@@ -19,7 +19,7 @@ public enum Attribute: CaseIterable {
             return .add(20)
         case .hitPointGain:
             return .add(5)
-        case .xpGainMultiplier:
+        case .xpMultiplier:
             return .add(1)
         }
     }

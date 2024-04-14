@@ -21,7 +21,7 @@ extension Race {
                 values: [
                     .baseHitPoints: .add(-10),
                     .hitPointGain: .add(-4),
-                    .xpGainMultiplier: .multiply(0.5)
+                    .xpMultiplier: .multiply(0.5)
                 ]
             )
         }
